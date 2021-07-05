@@ -1,0 +1,201 @@
+;MONSTER Yamazaki constants
+
+[Data]
+life              = 1000	;Amount of life to start with
+attack            = 100	;attack power (more is stronger)
+defence           = 100	;defensive power (more is stronger)
+fall.defence_up   = 50	;Percentage to increase defense everytime player is knocked down
+liedown.time      = 10	;Time which player lies down for, before getting up
+airjuggle         = 15	;Number of points for juggling
+sparkno           = 2	;Default hit spark number for HitDefs
+guard.sparkno     = 40	;Default guard spark number
+KO.echo           = 0	;1 to enable echo on KO
+volume            = 0	;Volume offset (negative for softer)
+;Variables with this index and above will not have their values
+;reset to 0 between rounds or matches. There are 60 int variables,
+;indexed from 0 to 59, and 40 float variables, indexed from 0 to 39.
+;If omitted, then it defaults to 60 and 40 for integer and float
+;variables repectively, meaning that none are persistent, i.e. all
+;are reset. If you want your variables to persist between matches,
+;you need to override state 5900 from common1.cns.
+IntPersistIndex   = 0
+FloatPersistIndex = 0
+
+[Size]
+xscale            = 1	;Horizontal scaling factor.
+yscale            = 1	;Vertical scaling factor.
+ground.back       = 14	;Player width (back, ground)
+ground.front      = 24	;Player width (front, ground)
+air.back          = 21	;Player width (back, air)
+air.front         = 20	;Player width (front, air)
+height            = 118	;Height of player (for opponent to jump over)
+attack.dist       = 64	;Default attack distance
+proj.attack.dist  = 140	;Default attack distance for projectiles
+proj.doscale      = 0	;Set to 1 to scale projectiles too
+head.pos          = 10, -109	;Approximate position of head
+mid.pos           = 14, -74	;Approximate position of midsection
+shadowoffset      = 0	;Number of pixels to vertically offset the shadow
+draw.offset       = 0,0	;Player drawing offset in pixels (x, y). Recommended 0,0
+
+[Velocity]
+walk.fwd          = 1.88061877	;Walk forward
+walk.back         = -1.41071505		; Walk backward
+run.fwd           = 6.018531076, 0		;Run forward (x, y)
+run.back          = -8.307674974,-3.573311084		;Hop backward (x, y)
+jump.neu          = 0,-10.64080262455177		;Neutral jumping velocity (x, y)
+jump.back         = -2.851060168	;Jump back Speed (x, y)
+jump.fwd          = 2.851060168		;Jump forward Speed (x, y)
+;runjump.back      = 0,0	;Running jump speeds (opt)
+;runjump.fwd       = 0,0		;.
+airjump.neu       = 0,-5.600000858		;.
+airjump.back      = -1.650415808346685		;Air jump speeds (opt)
+airjump.fwd       = 1.650415808346685		;.
+;air.gethit.groundrecover   = -.6,-14	;Velocity for ground recovery state (x, y) **MUGEN 1.0**
+;air.gethit.airrecover.mul  = .5,.2	;Multiplier for air recovery velocity (x, y) **MUGEN 1.0**
+;air.gethit.airrecover.add  = 0,-18	;Velocity offset for air recovery (x, y) **MUGEN 1.0**
+;air.gethit.airrecover.back = -4	;Extra x-velocity for holding back during air recovery **MUGEN 1.0**
+;air.gethit.airrecover.fwd  = 0		;Extra x-velocity for holding forward during air recovery **MUGEN 1.0**
+;air.gethit.airrecover.up   = -8	;Extra y-velocity for holding up during air recovery **MUGEN 1.0**
+;air.gethit.airrecover.down = 6		;Extra y-velocity for holding down during air recovery **MUGEN 1.0**
+
+[Movement]
+airjump.num                = 1		;Number of air jumps allowed (opt)
+airjump.height             = 20	;Minimum distance from ground before you can air jump (opt)
+yaccel                     = 0.80000019	;Vertical acceleration
+stand.friction             = .85	;Friction coefficient when standing
+crouch.friction            = .82	;Friction coefficient when crouching
+stand.friction.threshold   = 8		;If player's speed drops below this threshold while standing, stop his movement **MUGEN 1.0**
+crouch.friction.threshold  = .2	;If player's speed drops below this threshold while crouching, stop his movement **MUGEN 1.0**
+air.gethit.groundlevel     = 16	;Y-position at which a falling player is considered to hit the ground **MUGEN 1.0**
+;air.gethit.groundrecover.ground.threshold = -80	;Y-position below which falling player can use the recovery command **MUGEN 1.0**
+;air.gethit.groundrecover.groundlevel      = 40	;Y-position at which player in the ground recovery state touches the ground **MUGEN 1.0**
+;air.gethit.airrecover.threshold           = -4	;Y-velocity above which player may use the air recovery command **MUGEN 1.0**
+;air.gethit.airrecover.yaccel              = 1.4	;Vertical acceleration for player in the air recovery state **MUGEN 1.0**
+air.gethit.trip.groundlevel               = 20	;Y-position at which player in the tripped state touches the ground **MUGEN 1.0**
+down.bounce.offset         = 0, 0	;Offset for player bouncing off the ground (x, y) **MUGEN 1.0**
+down.bounce.yaccel         = .95 ;Vertical acceleration for player bouncing off the ground **MUGEN 1.0**
+down.bounce.groundlevel    = 0;Y-position at which player bouncing off the ground touches the ground again **MUGEN 1.0**
+down.friction.threshold    = .2	;If the player's speed drops below this threshold while lying down, stop his movement **MUGEN 1.0**
+
+;Default language victory quotes **MUGEN 1.0**
+;The default language victory quotes must be implemented in English.
+[Quotes]
+; Up to 100 victory quotes can be specified per language (victory0 - victory99)
+victory1 = "Aww! I want to fight some more!"
+;---------------------------------------------------------------------------
+; variable list
+;
+; var(0) = shift selected? = 0,1 (intro not over until)
+; var(1) = shift selection countdown
+; var(2) = current shift = 1,2,3,4
+; var(3) = shift active = 0,1,2 (0 = grey, 2 = refractory)
+; var(4) = standard bar = 0-100 (starts full)
+; var(5) = damage display
+; var(6) = "			"
+; var(7) = combo correction
+; var(8) = percent display
+; var(9) = save percent
+; var(10) = level = 1,2,3
+; var(11) = bash combo number = 0,1,2,3 (to 0 when dropped)
+; var(12) = total damage
+; var(13) = save total
+; var(14) = unique hits for a chaining
+; var(15) = heartbeat flag
+; var(16) = powerbreak config
+; var(17) = shift velocity config
+; var(18) = p2 air determination
+; var(19) = counter hit determination
+; var(20) = p1 point
+; var(21) = p2 point
+; var(22) = double MONSTER match override
+; var(23) = enemy combo correction
+; var(24) = counter hit determination
+; var(25) = cache powerbreak decision
+; var(26) = powerbreak active flag
+; var(27) = save p1 point for fade 
+; var(28) = save p2 point for fade
+; var(29) = p1 powerbreak correction!
+; var(30) = p2 powerbreak correction!
+; var(31) = powerbreak config
+; var(32) = confirm second powerbreak
+; var(33) = p1 track hits since powerbreak
+; var(34) = p2 track hits since powerbreak
+; var(35) = no triple break
+; var(36) = guard break check
+; var(37) = hitsound rando
+; var(38) = running flag
+; var(39) = var(4) reverse anim correct check
+; var(40) = throw confirm
+; var(41) = wall check
+; var(42) = dash cancel check
+; var(43) = confirm stateno normals for DC
+; var(44) = prevent double counting in var(8)
+; ...
+; character specific
+; var(45) = yamazaki sound
+; var(46) = updown confirm
+; var(47) = c buffers
+; ...
+; ext.
+; var(50) = hit by shift alone fix
+; var(51) = free
+; var(52) = free
+; var(53) = free
+; var(54) = free
+; var(55) = free
+; var(56) = free
+; var(57) = free
+; var(58) = Training mode detection
+; var(59) = free
+;
+; fvar(0) = damage boost = 1,1.20
+; fvar(1) = damage display
+; fvar(2) = character proration percent
+; fvar(3)-(12) = proration
+; fvar(13) = proration formula
+; fvar(14) = monster blow level flag
+; fvar(15) = shift x
+; fvar(16) = shift y
+; fvar(17) = counter to activate second powerbreak
+; fvar(18) = distance between two points at any given time
+; fvar(19) = p2 x pos for win
+; fvar(20) = set push x velocity
+; fvar(21) = cornerpush
+; fvar(22) = spark x
+; fvar(23) = spark y
+; fvar(24) = p1 x pos for win (aspect of distance via (18))
+; fvar(25) = count down time for walk
+; fvar(26) = p2 x pos for win (cached)
+; fvar(27) = comparison of (26) with (24) to determine (25)
+; favr(28) = p2 relative dist x (as (18) is ABSOLUTE dist)
+; fvar(29)-(38) = proration again
+;
+; fvar(store %) = ifelse(gethitvar(hitcount)<?, 1, fvar(set %))
+; etc. to 10...
+;
+;
+;
+; fvar(store equation)
+; ((fvar(store %)*fvar(store % 2)...*fvar(store % 10))-fvar(character%))
+;
+; damage*fvar(store equation)
+;
+; 
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;==========================================================

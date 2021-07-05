@@ -1,0 +1,103 @@
+=================================
+Conversion shortlist for Yamazaki
+=================================
+11/13/20 - 1.0
+Tweaked
+- vanilla sadomaso no longer reverses lows and crouches (shifted still does)
+
+To do
+- incoming tweaks on tranquility snake handler
+- AI (vans' system doesn't allow for base mugen dummy AI to do much)
+
+bugs
+- afterimages will loop when in custom state
+- bar will jitter on movement (inherent problem with using a helper for animations)
+_______________________
+11/6/20 - 1.0
+Tweaked
+- bar filler moves on zoom much less than before
+- air shift hitting ground target velocities fixed
+- the bar animation SHOULD be correct between rounds now
+- fixed VelMul error in Monster Blow that only occurs on stages with zoom
+- cleaned up some debug flood
+
+To do
+- incoming tweaks on tranquility snake handler
+- AI (vans' system doesn't allow for base mugen dummy AI to do much)
+
+bugs
+- afterimages will loop when in custom state
+- bar will jitter on movement (inherent problem with using a helper for animations)
+_______________________
+11/5/20 - 95% hotfix
+Tweaked
+- fixed palette bug
+- fixed sounds on C
+- first Bash Combo velocity lowered
+
+To do
+- Sometimes the bar animation will not properly refresh on next round, but the number will remain correct
+- incoming tweaks on tranquility snake handler
+- AI (vans' system doesn't allow for base mugen dummy AI to do much)
+
+bugs
+- afterimages will loop when in custom state
+- bar filler moves on zoom (inherent problem with using a helper for animations)
+_______________________
+11/2/20 - 95%
+Tweaked
+- dash & hopback cancels
+- vans buffer system added
+- edits to velocities for enemies hit in air/fall
+- necessary airfixes for most moves
+- damage display opaque to trans fix
+- damage increased 150% across the board
+- graphical tweaks
+- damage text no longer appearing on grab
+- some attempts to fix proration display errors, so far they're a little jumpy, but serviceable
+- hitspark positions fixed
+
+- seven:
+	- freedom whiff dash cancel ;^)
+	- tranquility airfix
+- snake: 
+	- dizzy fix in tranquility snake
+	- monster is idle on drag, cannot hit air or fall
+	- freedom dash cancel
+- sadomaso: 
+	- freedom now standard sado or optional hop back into punch
+	- tranquility becomes cheap driller
+	- monster now has wakeup punish
+- headbutt: 
+	- mild edits to tranquility
+
+- absurd added
+- bash combo added
+
+Not done/bugs
+- juggle system???
+- misc effects
+- AI (if you fight this character they will use any form of a move regardless of shifts)
+- afterimages will loop when in custom state
+- incoming tweaks on tranquility snake handler
+- Sometimes the bar animation will not properly refresh on next round, but the number will remain correct
+- palette bug (I don't really care enough to fix this)
+- bar filler moves on zoom
+___________________
+10/25/20 - 70%
+Tweaked
+- fixed hypers not refreshing bar drain anim
+- if round ends on drain, the next round will drain. If it ends on regen, the next round will regen; moreover, the bar will regen during the intro after the first round. This is more in line with source.
+- Fixed helper screen move bug
+- damage and percent appear when in grab (still one bug with the tens and percent, but otherwise fine)
+- (do this) caught a bug where bar doesn't refill after round 2
+
+Not done/bugs
+- juggle system???
+- misc effects
+- AI (if you fight this character they will use any form of a move regardless of shifts)
+- afterimages will loop when in custom state
+- Absurd and Monster Combo
+- comboing
+- damage text appearing on grab
+- incoming tweaks on tranquility snake handler

@@ -1,0 +1,4378 @@
+; ai vs ai
+[Begin Action 11125]
+11125,0, 0,0, -1
+
+; man vs ai
+[Begin Action 11126]
+11125,1, 0,0, -1
+
+; man vs man
+[Begin Action 11127]
+11125,2, 0,0, -1
+
+[Begin Action 11200]
+11200,1, 0,0, -1
+
+[Begin Action 11201]
+11200,3, 0,0, -1
+
+[Begin Action 11202]
+11200,0, 0,0, -1
+
+[Begin Action 11203]
+11200,2, 0,0, -1
+
+; tranquility (start)
+[Begin Action 6000]
+6000,0, 0,0, -1, , A
+; tranquility to freedom
+[Begin Action 6001]
+Interpolate Angle
+6000,0, 0,0, 26, , A, 1,1, 10
+Interpolate Angle
+6000,0, 0,0, 2, , A, 1,1, 120
+Interpolate Angle
+6000,0, 0,0, 6, , A, 1,1, 130
+Interpolate Angle
+6000,0, 0,0, -1, , A, 1,1, 120
+
+; freedom to monster
+[Begin Action 6002]
+Interpolate Angle
+6000,0, 0,0, 26, , A, 1,1, 130
+Interpolate Angle
+6000,0, 0,0, 2, , A, 1,1, 240
+Interpolate Angle
+6000,0, 0,0, 6, , A, 1,1, 250
+Interpolate Angle
+6000,0, 0,0, -1, , A, 1,1, 240
+
+; monster to tranquility
+[Begin Action 6003]
+Interpolate Angle
+6000,0, 0,0, 26, , A, 1,1, 250
+Interpolate Angle
+6000,0, 0,0, 2, , A, 1,1, 360
+6000,0, 0,0, 2, , A, 1,1, 5
+6000,0, 0,0, 2, , A, 1,1, 10
+6000,0, 0,0, 2, , A, 1,1, 5
+6000,0, 0,0, -1, , A, 1,1, 360
+
+; tranquility to monster
+[Begin Action 6004]
+Interpolate Angle
+6000,0, 0,0, 26, , A, 1,1, 350
+Interpolate Angle
+6000,0, 0,0, 2, , A, 1,1, 240
+Interpolate Angle
+6000,0, 0,0, 6, , A, 1,1, 230
+Interpolate Angle
+6000,0, 0,0, -1, , A, 1,1, 240
+
+; monster to freedom
+[Begin Action 6005]
+Interpolate Angle
+6000,0, 0,0, 26, , A, 1,1, 230
+Interpolate Angle
+6000,0, 0,0, 2, , A, 1,1, 120
+Interpolate Angle
+6000,0, 0,0, 6, , A, 1,1, 110
+Interpolate Angle
+6000,0, 0,0, -1, , A, 1,1, 120
+
+; freedom to tranquility
+[Begin Action 6006]
+Interpolate Angle
+6000,0, 0,0, 26, , A, 1,1, 110
+Interpolate Angle
+6000,0, 0,0, 2, , A
+6000,0, 0,0, 2, , A, 1,1, 355
+6000,0, 0,0, 2, , A, 1,1, 350
+6000,0, 0,0, 2, , A, 1,1, 355
+6000,0, 0,0, -1, , A, 1,1, 360
+
+[Begin Action 6100]
+6000,4, 0,0, -1
+
+[Begin Action 6101]
+6000,2, 0,0, -1
+
+[Begin Action 6102]
+6000,3, 0,0, -1
+
+[Begin Action 6103]
+6000,4, 0,0, -1
+
+[Begin Action 6110]
+6000,1, 0,0, -1
+
+;warning
+[Begin Action 6200]
+6100,0, 0,0, 3, , A
+-1,0, 0,0, 3
+
+;warning
+[Begin Action 6201]
+6100,1, 279,0, 3, H, AS128D256, 9
+-1,0, 0,0, 3
+
+;warning
+[Begin Action 6202]
+6100,1, -287,0, 3, , AS128D256, 9
+-1,0, 0,0, 3
+
+;0
+[Begin Action 6500]
+6004,1, 0,0, -1
+;1
+[Begin Action 6501]
+6004,2, 0,0, -1
+;2
+[Begin Action 6502]
+6004,3, 0,0, -1
+;3
+[Begin Action 6503]
+6004,4, 0,0, -1
+;level
+[Begin Action 6504]
+6004,0, 0,0, -1, , A
+
+[Begin Action 6699]
+6007,0, 0,0, -1
+
+[Begin Action 6700]
+6008,0, 0,0, -1
+[Begin Action 6701]
+6008,1, 0,0, -1
+[Begin Action 6702]
+6008,2, 0,0, -1
+[Begin Action 6703]
+6008,3, 0,0, -1
+[Begin Action 6704]
+6008,4, 0,0, -1
+[Begin Action 6705]
+6008,5, 0,0, -1
+[Begin Action 6706]
+6008,6, 0,0, -1
+[Begin Action 6707]
+6008,7, 0,0, -1
+[Begin Action 6708]
+6008,8, 0,0, -1
+[Begin Action 6709]
+6008,9, 0,0, -1
+
+[Begin Action 6799]
+Interpolate Blend
+6007,0, 0,0, 19, , AS256D0
+Interpolate Blend
+6007,0, 0,0, -1, , AS0D256
+
+[Begin Action 6800]
+Interpolate Blend
+6008,0, 0,0, 19, , AS256D0
+Interpolate Blend
+6008,0, 0,0, -1, , AS0D256
+[Begin Action 6801]
+Interpolate Blend
+6008,1, 0,0, 19, , AS256D0
+Interpolate Blend
+6008,1, 0,0, -1, , AS0D256
+[Begin Action 6802]
+Interpolate Blend
+6008,2, 0,0, 19, , AS256D0
+Interpolate Blend
+6008,2, 0,0, -1, , AS0D256
+[Begin Action 6803]
+Interpolate Blend
+6008,3, 0,0, 19, , AS256D0
+Interpolate Blend
+6008,3, 0,0, -1, , AS0D256
+[Begin Action 6804]
+Interpolate Blend
+6008,4, 0,0, 19, , AS256D0
+Interpolate Blend
+6008,4, 0,0, -1, , AS0D256
+[Begin Action 6805]
+Interpolate Blend
+6008,5, 0,0, 19, , AS256D0
+Interpolate Blend
+6008,5, 0,0, -1, , AS0D256
+[Begin Action 6806]
+Interpolate Blend
+6008,6, 0,0, 19, , AS256D0
+Interpolate Blend
+6008,6, 0,0, -1, , AS0D256
+[Begin Action 6807]
+Interpolate Blend
+6008,7, 0,0, 19, , AS256D0
+Interpolate Blend
+6008,7, 0,0, -1, , AS0D256
+[Begin Action 6808]
+Interpolate Blend
+6008,8, 0,0, 19, , AS256D0
+Interpolate Blend
+6008,8, 0,0, -1, , AS0D256
+[Begin Action 6809]
+Interpolate Blend
+6008,9, 0,0, 19, , AS256D0
+Interpolate Blend
+6008,9, 0,0, -1, , AS0D256
+
+[Begin Action 7000]
+Interpolate Scale
+Interpolate Blend
+7000,0, 0,0, 9, , A, 0.9,2
+Interpolate Blend
+Interpolate Scale
+7000,0, 0,0, 1, , AS25D256, 2,0.2
+
+[Begin Action 7002]
+Interpolate Scale
+Interpolate Blend
+7001,0, 0,0, 5, , A, 1.5,0.2
+Interpolate Blend
+Interpolate Scale
+7001,0, 0,0, 1, , AS20D256, 3,0.2
+; shift outer circle
+[Begin Action 7399]
+Interpolate Scale
+Interpolate Blend
+6005,0, 0,0, 24, , A
+Interpolate Scale
+Interpolate Blend
+6005,0, 0,0, 1, , AS20D256, 3,3
+
+;shift back
+[Begin Action 7402]
+Interpolate Scale
+Interpolate Angle
+Interpolate Blend
+6005,2, 0,0, 24, , A, 2.2,2.2
+Interpolate Scale
+Interpolate Angle
+Interpolate Blend
+6005,2, 0,0, 1, , AS0D256, 2,2, 20
+
+; shift done
+[Begin Action 7405]
+Interpolate Scale
+Interpolate Blend
+7405,0, 0,0, 19, , AS128D256, 0.5,0.5
+Interpolate Scale
+Interpolate Blend
+7405,0, 0,0, 1, , AS0D256, 3,3
+
+; shift tranquility
+[Begin Action 7410]
+Interpolate Angle
+Interpolate Scale
+6005,1, 0,0, 29, , A, 1.2,1.2
+Interpolate Angle
+Interpolate Scale
+6005,1, 0,0, 1, , A, 1,1, 120
+
+[Begin Action 7411]
+Interpolate Angle
+Interpolate Blend
+Interpolate Scale
+6005,1, 0,0, 29, , A, 1.2,1.2, 120
+Interpolate Angle
+Interpolate Blend
+Interpolate Scale
+6005,1, 0,0, 1, , AS20D256, 1,1, 240
+
+[Begin Action 7412]
+Interpolate Angle
+Interpolate Blend
+Interpolate Scale
+6005,1, 0,0, 29, , A, 1.2,1.2, 240
+Interpolate Angle
+Interpolate Blend
+Interpolate Scale
+6005,1, 0,0, 1, , AS20D256, 1,1, 360
+
+; shift freedom
+[Begin Action 7420]
+Interpolate Angle
+Interpolate Scale
+6005,1, 0,0, 29, , A, 1.2,1.2, 240
+Interpolate Angle
+Interpolate Scale
+6005,1, 0,0, 1, , A, 1,1, 360
+
+[Begin Action 7421]
+Interpolate Angle
+Interpolate Blend
+Interpolate Scale
+6005,1, 0,0, 29, , A, 1.2,1.2, 120
+Interpolate Angle
+Interpolate Blend
+Interpolate Scale
+6005,1, 0,0, 1, , AS20D256, 1,1, 240
+
+[Begin Action 7422]
+Interpolate Angle
+Interpolate Blend
+Interpolate Scale
+6005,1, 0,0, 29, , A, 1.2,1.2
+Interpolate Angle
+Interpolate Blend
+Interpolate Scale
+6005,1, 0,0, 1, , AS20D256, 1,1, 120
+
+; shift monster
+[Begin Action 7430]
+Interpolate Angle
+Interpolate Scale
+6005,1, 0,0, 29, , A, 1.2,1.2, 120
+Interpolate Angle
+Interpolate Scale
+6005,1, 0,0, 1, , A, 1,1, 240
+
+[Begin Action 7431]
+Interpolate Angle
+Interpolate Blend
+Interpolate Scale
+6005,1, 0,0, 29, , A, 1.2,1.2
+Interpolate Angle
+Interpolate Blend
+Interpolate Scale
+6005,1, 0,0, 1, , AS20D256, 1,1, 120
+
+[Begin Action 7432]
+Interpolate Angle
+Interpolate Blend
+Interpolate Scale
+6005,1, 0,0, 29, , A, 1.2,1.2, 240
+Interpolate Angle
+Interpolate Blend
+Interpolate Scale
+6005,1, 0,0, 1, , AS20D256, 1,1, 360
+
+; bash combo I
+[Begin Action 7500]
+Interpolate Scale
+Interpolate Blend
+6005,1, 0,0, 29, , AS20D256, 1.3,1.3, 240
+Interpolate Scale
+Interpolate Blend
+6005,1, 0,0, 1, , A, 0.9,0.9, 240
+-1,0, 0,0, -1
+
+; bash combo II
+[Begin Action 7510]
+Interpolate Scale
+Interpolate Blend
+6005,1, 0,0, 29, , AS20D256, 1.3,1.3
+Interpolate Scale
+Interpolate Blend
+6005,1, 0,0, 1, , A, 0.9,0.9
+-1,0, 0,0, -1
+
+; bash combo III
+[Begin Action 7520]
+Interpolate Scale
+Interpolate Blend
+6005,0, 0,0, 29, , AS20D256, 1.3,1.3
+Interpolate Scale
+Interpolate Blend
+6005,0, 0,0, 1, , A, 0.9,0.9
+-1,0, 0,0, -1
+
+; monster blow I
+[Begin Action 7600]
+Interpolate Scale
+Interpolate Blend
+6005,1, 0,0, 29, , AS20D256, 2,2, 240
+Interpolate Scale
+Interpolate Blend
+6005,1, 0,0, 1, , A, 1,1, 240
+-1,0, 0,0, -1
+
+; II
+[Begin Action 7610]
+Interpolate Scale
+Interpolate Blend
+6005,1, 0,0, 29, , AS20D256, 2,2
+Interpolate Scale
+Interpolate Blend
+6005,1, 0,0, 1, , A, 1,1
+-1,0, 0,0, -1
+
+; III
+[Begin Action 7620]
+Interpolate Scale
+Interpolate Blend
+6005,0, 0,0, 29, , AS20D256, 2,2
+Interpolate Scale
+Interpolate Blend
+6005,0, 0,0, 1, , A
+-1,0, 0,0, -1
+
+; absurd special
+[Begin Action 7700]
+Interpolate Blend
+Interpolate Scale
+6005,0, 0,0, 39, , A, 1.4,1.4
+Interpolate Blend
+Interpolate Scale
+6005,0, 0,0, 1, , A
+-1,0, 0,0, -1
+
+[Begin Action 8000]
+Interpolate Blend
+Interpolate Scale
+8000,5, 0,0, 9, , AS20D256, 0.2,0.2
+Interpolate Blend
+Interpolate Scale
+8000,5, 0,0, 1, , A, 0.4,0.4
+Interpolate Blend
+Interpolate Scale
+8000,0, 0,0, 6, , AS20D256, 0.2,0.2
+Interpolate Blend
+Interpolate Scale
+8000,0, 0,0, 1, , A, 0.3,0.3
+
+[Begin Action 8005]
+Interpolate Scale
+Interpolate Blend
+8000,6, 0,0, 9, , A, 0.5,0.5
+Interpolate Blend
+Interpolate Scale
+8000,6, 0,0, 1, , AS20D256
+
+[Begin Action 8100]
+Interpolate Blend
+Interpolate Scale
+8000,1, 0,0, 3, , AS120D256, 0.8,0.8
+Interpolate Blend
+Interpolate Scale
+8000,1, 0,0, 1, , AS20D256, 0.2,0.2
+
+[Begin Action 8101]
+Interpolate Scale
+Interpolate Blend
+6005,0, 0,0, 2, , A, 0.3,0.3
+Interpolate Scale
+Interpolate Blend
+Interpolate Angle
+6005,0, 0,0, 1, , AS120D256, 0.2,0.2
+Interpolate Blend
+Interpolate Scale
+8000,2, 0,0, 2, , AS120D256, 0.5,0.5
+Interpolate Blend
+Interpolate Scale
+Interpolate Angle
+8000,2, 0,0, 2, , AS70D256, 0.5,0.2, 16
+Interpolate Scale
+Interpolate Angle
+Interpolate Blend
+8000,2, 0,0, 2, , AS40D256, 0.5,0.1, 128
+
+; guard break thing
+[Begin Action 8102]
+Interpolate Blend
+8001,5, 0,0, 29, , A
+Interpolate Blend
+8001,5, 0,0, 1, , AS0D256
+
+[Begin Action 8103]
+Interpolate Scale
+Interpolate Blend
+Interpolate Angle
+6005,0, 0,0, 24, , A
+Interpolate Scale
+Interpolate Blend
+Interpolate Angle
+6005,0, 0,0, 1, , AS20D256, 3,3, 360
+
+[Begin Action 8105]
+Interpolate Scale
+Interpolate Blend
+Interpolate Offset
+8001,6, -19,-27, 19, , AS128D256, 0.9,1, 125
+Interpolate Scale
+Interpolate Blend
+Interpolate Offset
+8001,6, -112,-155, 1, , AS0D256, 6,0.5, 125
+
+[Begin Action 8106]
+Interpolate Scale
+Interpolate Blend
+Interpolate Offset
+8001,6, 0,-36, 19, , AS128D256, 0.9,1, 90
+Interpolate Scale
+Interpolate Blend
+Interpolate Offset
+8001,6, 0,-192, 1, , AS0D256, 6,0.5, 90
+
+[Begin Action 8107]
+Interpolate Scale
+Interpolate Blend
+Interpolate Offset
+8001,6, 31,-17, 19, , AS128D256, 0.9,0.2, 25
+Interpolate Scale
+Interpolate Blend
+Interpolate Offset
+8001,6, 169,-82, 1, , AS0D255, 6,0.2, 25
+
+[Begin Action 8108]
+Interpolate Scale
+Interpolate Blend
+Interpolate Offset
+8001,6, 29,22, 19, , AS128D256, 0.9,1, 325
+Interpolate Scale
+Interpolate Blend
+Interpolate Offset
+8001,6, 159,113, 1, , AS0D256, 6,0.5, 325
+
+[Begin Action 8109]
+Interpolate Scale
+Interpolate Blend
+Interpolate Offset
+8001,6, -14,32, 19, , AS128D256, 0.9,1, 245
+Interpolate Scale
+Interpolate Blend
+Interpolate Offset
+8001,6, -82,171, 1, , AS0D256, 6,0.5, 245
+
+[Begin Action 8110]
+Interpolate Scale
+Interpolate Blend
+Interpolate Offset
+8001,6, -34,16, 19, , AS128D256, 0.9,0.2, 200
+Interpolate Scale
+Interpolate Blend
+Interpolate Offset
+8001,6, -177,68, 1, , AS0D255, 6,0.2, 200
+
+[Begin Action 8200]
+Interpolate Scale
+Interpolate Blend
+8001,0, 0,0, 10, , A, 0.2,0.2, 105
+Interpolate Scale
+Interpolate Blend
+8001,0, 0,0, 4, , AS100D256, 2,0.1, 105
+Interpolate Blend
+Interpolate Scale
+8001,0, 0,0, 1, , AS50D256, 5,0.1, 105
+[Begin Action 8201]
+Interpolate Scale
+Interpolate Blend
+8001,0, 0,0, 10, , A, 0.2,0.2, 130
+Interpolate Scale
+Interpolate Blend
+8001,0, 0,0, 4, , AS100D256, 2,0.1, 130
+Interpolate Blend
+Interpolate Scale
+8001,0, 0,0, 1, , AS50D256, 5,0.1, 130
+[Begin Action 8202]
+Interpolate Scale
+Interpolate Blend
+8001,0, 0,0, 10, , A, 0.2,0.2, 145
+Interpolate Scale
+Interpolate Blend
+8001,0, 0,0, 4, , AS100D256, 2,0.1, 145
+Interpolate Blend
+Interpolate Scale
+8001,0, 0,0, 1, , AS50D256, 5,0.1, 145
+[Begin Action 8203]
+Interpolate Scale
+Interpolate Blend
+8001,0, 0,0, 10, , A, 0.2,0.2, 160
+Interpolate Scale
+Interpolate Blend
+8001,0, 0,0, 4, , AS100D256, 2,0.1, 160
+Interpolate Blend
+Interpolate Scale
+8001,0, 0,0, 1, , AS50D256, 5,0.1, 160
+[Begin Action 8204]
+Interpolate Scale
+Interpolate Blend
+8001,0, 0,0, 10, , A, 0.2,0.2, 175
+Interpolate Scale
+Interpolate Blend
+8001,0, 0,0, 4, , AS100D256, 2,0.1, 175
+Interpolate Blend
+Interpolate Scale
+8001,0, 0,0, 1, , AS50D256, 5,0.1, 175
+[Begin Action 8205]
+Interpolate Scale
+Interpolate Blend
+8001,0, 0,0, 10, , A, 0.2,0.2, 190
+Interpolate Scale
+Interpolate Blend
+8001,0, 0,0, 4, , AS100D256, 2,0.1, 190
+Interpolate Blend
+Interpolate Scale
+8001,0, 0,0, 1, , AS50D256, 5,0.1, 190
+[Begin Action 8206]
+Interpolate Scale
+Interpolate Blend
+8001,0, 0,0, 10, , A, 0.2,0.2, 205
+Interpolate Scale
+Interpolate Blend
+8001,0, 0,0, 4, , AS100D256, 2,0.1, 205
+Interpolate Blend
+Interpolate Scale
+8001,0, 0,0, 1, , AS50D256, 5,0.1, 205
+[Begin Action 8207]
+Interpolate Scale
+Interpolate Blend
+8001,0, 0,0, 10, , A, 0.2,0.2, 220
+Interpolate Scale
+Interpolate Blend
+8001,0, 0,0, 4, , AS100D256, 2,0.1, 220
+Interpolate Blend
+Interpolate Scale
+8001,0, 0,0, 1, , AS50D256, 5,0.1, 220
+[Begin Action 8210]
+Interpolate Scale
+Interpolate Blend
+8001,3, 0,0, 14, , A
+Interpolate Blend
+Interpolate Scale
+8001,3, 0,0, 1, , AS20D256, 3,3
+[Begin Action 8211]
+Interpolate Scale
+Interpolate Blend
+8000,2, 0,0, 14, , A, 0.1,0.1
+Interpolate Blend
+Interpolate Scale
+8000,2, 0,0, 1, , AS20D256, 4,4
+
+[Begin Action 8212]
+Interpolate Blend
+8001,4, 0,-129, 4, , A, 0.1,5
+Interpolate Blend
+8001,4, -94,-94, 1, , AS0D256, 0.1,5, 45
+
+[Begin Action 8300]
+Interpolate Blend
+Interpolate Scale
+Interpolate Offset
+Interpolate Angle
+8001,1, 0,0, 10, , AS0D256, 0.3,0.2, 350
+Interpolate Angle
+Interpolate Offset
+Interpolate Blend
+Interpolate Scale
+8001,1, -12,-4, 5, , AS120D256, 0.4,0.2, 350
+Interpolate Blend
+Interpolate Scale
+Interpolate Offset
+Interpolate Angle
+8001,1, -18,-6, 9, , A, 0.5,0.3, 350
+Interpolate Blend
+Interpolate Scale
+Interpolate Offset
+Interpolate Angle
+8001,1, -27,-11, 1, , AS20D256, 0.7,0.5, 350
+
+;black background
+[Begin Action 8499]
+6001,1, 0,0, -1
+
+;bar
+[Begin Action 8500]
+6001,0, 0,0, -1, , A
+
+;ready
+[Begin Action 8501]
+6003,1, 0,0, -1
+
+;absurd
+[Begin Action 8502]
+6003,0, 0,0, -1
+
+;tranquility
+[Begin Action 8503]
+6002,2, 0,0, -1
+
+;freedom
+[Begin Action 8504]
+6002,0, 0,0, -1
+
+;monster
+[Begin Action 8505]
+6002,1, 0,0, -1
+
+;bar drain
+[Begin Action 8510]
+Interpolate Scale
+6001,0, 0,0, 6, , S
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.99
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.98
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.97
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.96
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.95
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.94
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.93
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.92
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.91
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.9
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.89
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.88
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.87
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.86
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.85
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.84
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.83
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.82
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.81
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.80
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.79
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.78
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.77
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.76
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.75
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.74
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.73
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.72
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.71
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.70
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.69
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.68
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.67
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.66
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.65
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.64
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.63
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.62
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.61
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.60
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.59
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.58
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.57
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.56
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.55
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.54
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.53
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.52
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.51
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.50
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.49
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.48
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.47
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.46
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.45
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.44
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.43
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.42
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.41
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.40
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.39
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.38
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.37
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.36
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.35
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.34
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.33
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.32
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.31
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.30
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.29
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.28
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.27
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.26
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.25
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.24
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.23
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.22
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.21
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.20
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.19
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.18
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.17
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.16
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.15
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.14
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.13
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.12
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.11
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.10
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.09
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.08
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.07
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.06
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.05
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.04
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.03
+Interpolate Scale
+6001,0, 0,0, 6, , S, 0.02
+Interpolate Scale
+6001,0, 0,0, -1, , S, 0.01
+
+;bar drain NONSUB
+[Begin Action 8511]
+Interpolate Scale
+6001,0, 0,0, 599, , A
+Interpolate Scale
+6001,0, 0,0, -1, , A, 0
+
+;bar regen
+[Begin Action 8520]
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.01
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.02
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.03
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.04
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.05
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.06
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.07
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.08
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.09
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.10
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.11
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.12
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.13
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.14
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.15
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.16
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.17
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.18
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.19
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.20
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.21
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.22
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.23
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.24
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.25
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.26
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.27
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.28
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.29
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.30
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.31
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.32
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.33
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.34
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.35
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.36
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.37
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.38
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.39
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.40
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.41
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.42
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.43
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.44
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.45
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.46
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.47
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.48
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.49
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.50
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.51
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.52
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.53
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.54
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.55
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.56
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.57
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.58
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.59
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.60
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.61
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.62
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.63
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.64
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.65
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.66
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.67
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.68
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.69
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.70
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.71
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.72
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.73
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.74
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.75
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.76
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.77
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.78
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.79
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.80
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.81
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.82
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.83
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.84
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.85
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.86
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.87
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.88
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.89
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.90
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.91
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.92
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.93
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.94
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.95
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.96
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.97
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.98
+Interpolate Scale
+6001,0, 0,0, 6, , A, 0.99
+Interpolate Scale
+6001,0, 0,0, -1, , A, 1
+
+;bar
+[Begin Action 8600]
+6001,0, 0,0, -1, H, A
+
+;bar drain
+[Begin Action 8610]
+Interpolate Scale
+6001,0, 0,0, 6, H, S
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.99
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.98
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.97
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.96
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.95
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.94
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.93
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.92
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.91
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.9
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.89
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.88
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.87
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.86
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.85
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.84
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.83
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.82
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.81
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.8
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.79
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.78
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.77
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.76
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.75
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.74
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.73
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.72
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.71
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.7
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.69
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.68
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.67
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.66
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.65
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.64
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.63
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.62
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.61
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.6
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.59
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.58
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.57
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.56
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.55
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.54
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.53
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.52
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.51
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.5
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.49
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.48
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.47
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.46
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.45
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.44
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.43
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.42
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.41
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.4
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.39
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.38
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.37
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.36
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.35
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.34
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.33
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.32
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.31
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.3
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.29
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.28
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.27
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.26
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.25
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.24
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.23
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.22
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.21
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.2
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.19
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.18
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.17
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.16
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.15
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.14
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.13
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.12
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.11
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.1
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.09
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.08
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.07
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.06
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.05
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.04
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.03
+Interpolate Scale
+6001,0, 0,0, 6, H, S, 0.02
+Interpolate Scale
+6001,0, 0,0, -1, H, S, 0.01
+
+;bar drain
+[Begin Action 8611]
+Interpolate Scale
+6001,0, 0,0, 599, , A
+Interpolate Scale
+6001,0, 0,0, -1, , A, 0
+
+;bar regen
+[Begin Action 8620]
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.01
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.02
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.03
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.04
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.05
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.06
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.07
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.08
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.09
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.1
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.11
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.12
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.13
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.14
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.15
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.16
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.17
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.18
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.19
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.2
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.21
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.22
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.23
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.24
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.25
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.26
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.27
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.28
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.29
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.3
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.31
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.32
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.33
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.34
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.35
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.36
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.37
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.38
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.39
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.4
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.41
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.42
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.43
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.44
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.45
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.46
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.47
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.48
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.49
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.5
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.51
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.52
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.53
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.54
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.55
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.56
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.57
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.58
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.59
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.6
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.61
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.62
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.63
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.64
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.65
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.66
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.67
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.68
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.69
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.7
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.71
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.72
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.73
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.74
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.75
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.76
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.77
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.78
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.79
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.8
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.81
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.82
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.83
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.84
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.85
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.86
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.87
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.88
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.89
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.9
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.91
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.92
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.93
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.94
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.95
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.96
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.97
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.98
+Interpolate Scale
+6001,0, 0,0, 6, H, A, 0.99
+Interpolate Scale
+6001,0, 0,0, -1, H, A
+
+[Begin Action 8998]
+6200,11, 0,0, -1
+[Begin Action 8999]
+6200,10, 0,0, -1, , A
+[Begin Action 9000]
+6200,0, 0,0, -1, , A
+[Begin Action 9001]
+6200,1, 0,0, -1, , A
+[Begin Action 9002]
+6200,2, 0,0, -1, , A
+[Begin Action 9003]
+6200,3, 0,0, -1, , A
+[Begin Action 9004]
+6200,4, 0,0, -1, , A
+[Begin Action 9005]
+6200,5, 0,0, -1, , A
+[Begin Action 9006]
+6200,6, 0,0, -1, , A
+[Begin Action 9007]
+6200,7, 0,0, -1, , A
+[Begin Action 9008]
+6200,8, 0,0, -1, , A
+[Begin Action 9009]
+6200,9, 0,0, -1, , A
+[Begin Action 9199]
+6200,10, 0,0, -1
+[Begin Action 9200]
+6200,0, 0,0, -1
+[Begin Action 9201]
+6200,1, 0,0, -1
+[Begin Action 9202]
+6200,2, 0,0, -1
+[Begin Action 9203]
+6200,3, 0,0, -1
+[Begin Action 9204]
+6200,4, 0,0, -1
+[Begin Action 9205]
+6200,5, 0,0, -1
+[Begin Action 9206]
+6200,6, 0,0, -1
+[Begin Action 9207]
+6200,7, 0,0, -1
+[Begin Action 9208]
+6200,8, 0,0, -1
+[Begin Action 9209]
+6200,9, 0,0, -1
+
+[Begin Action 9298]
+Interpolate Blend
+6200,11, 0,0, 179, , AS256D0
+Interpolate Blend
+6200,11, 0,0, -1, , AS0D256
+[Begin Action 9299]
+Interpolate Blend
+6200,10, 0,0, 179, , AS256D0
+Interpolate Blend
+6200,10, 0,0, -1, , AS0D256
+
+[Begin Action 9300]
+Interpolate Blend
+6200,0, 0,0, 179, , AS256D0
+Interpolate Blend
+6200,0, 0,0, -1, , AS0D256
+
+[Begin Action 9301]
+Interpolate Blend
+6200,1, 0,0, 179, , AS256D0
+Interpolate Blend
+6200,1, 0,0, -1, , AS0D256
+
+[Begin Action 9302]
+Interpolate Blend
+6200,2, 0,0, 179, , AS256D0
+Interpolate Blend
+6200,2, 0,0, -1, , AS0D256
+
+[Begin Action 9303]
+Interpolate Blend
+6200,3, 0,0, 179, , AS256D0
+Interpolate Blend
+6200,3, 0,0, -1, , AS0D256
+
+[Begin Action 9304]
+Interpolate Blend
+6200,4, 0,0, 179, , AS256D0
+Interpolate Blend
+6200,4, 0,0, -1, , AS0D256
+
+[Begin Action 9305]
+Interpolate Blend
+6200,5, 0,0, 179, , AS256D0
+Interpolate Blend
+6200,5, 0,0, -1, , AS0D256
+
+[Begin Action 9306]
+Interpolate Blend
+6200,6, 0,0, 179, , AS256D0
+Interpolate Blend
+6200,6, 0,0, -1, , AS0D256
+
+[Begin Action 9307]
+Interpolate Blend
+6200,7, 0,0, 179, , AS256D0
+Interpolate Blend
+6200,7, 0,0, -1, , AS0D256
+
+[Begin Action 9308]
+Interpolate Blend
+6200,8, 0,0, 179, , AS256D0
+Interpolate Blend
+6200,8, 0,0, -1, , AS0D256
+
+[Begin Action 9309]
+Interpolate Blend
+6200,9, 0,0, 179, , AS256D0
+Interpolate Blend
+6200,9, 0,0, -1, , AS0D256
+
+[Begin Action 9100]
+Interpolate Blend
+6006,0, 0,0, 20, , A
+Interpolate Blend
+Interpolate Scale
+6006,0, 0,0, 39, , A
+Interpolate Scale
+Interpolate Blend
+6006,0, 0,0, 1, , AS20D256, 1.5
+
+[Begin Action 9101]
+Interpolate Blend
+6006,1, 0,0, 20, , A
+Interpolate Blend
+Interpolate Scale
+6006,1, 0,0, 39, , A
+Interpolate Blend
+Interpolate Scale
+6006,1, 0,0, 1, , AS20D256, 1.5
+
+[Begin Action 9102]
+Interpolate Blend
+6006,2, 0,0, 20, , A
+Interpolate Blend
+Interpolate Scale
+6006,2, 0,0, 39, , A
+Interpolate Blend
+Interpolate Scale
+6006,2, 0,0, 1, , AS20D256, 1.5
+
+[Begin Action 9103]
+Interpolate Scale
+Interpolate Blend
+6006,3, 0,0, 4, , AS0D256
+Interpolate Blend
+Interpolate Scale
+6006,3, 0,0, 1, , A, 1.1
+Interpolate Blend
+Interpolate Scale
+6006,3, 0,0, 29, , A, 1.1
+Interpolate Blend
+Interpolate Scale
+6006,3, 0,0, 1, , AS0D256, 1.6
+
+[Begin Action 9104]
+6006,4, 0,0, 20, , A
+Interpolate Blend
+Interpolate Scale
+6006,4, 0,0, 39, , A
+Interpolate Blend
+Interpolate Scale
+6006,4, 0,0, 1, , AS20D256, 1.5
+[Begin Action 9105]
+Interpolate Scale
+Interpolate Blend
+6006,5, 0,0, 4, , AS0D256
+Interpolate Blend
+Interpolate Scale
+6006,5, 0,0, 1, , A, 1.1
+Interpolate Blend
+Interpolate Scale
+6006,5, 0,0, 29, , A, 1.1
+Interpolate Blend
+Interpolate Scale
+6006,5, 0,0, 1, , AS0D256, 1.6
+
+[Begin Action 9106]
+Interpolate Blend
+6010,0, 0,0, 20, , A
+Interpolate Blend
+Interpolate Scale
+6010,0, 0,0, 39, , A
+Interpolate Blend
+Interpolate Scale
+6010,0, 0,0, 1, , AS20D256, 1.5
+
+[Begin Action 9107]
+Interpolate Blend
+6010,1, 0,0, 20, , A
+Interpolate Blend
+Interpolate Scale
+6010,1, 0,0, 39, , A
+Interpolate Blend
+Interpolate Scale
+6010,1, 0,0, 1, , AS20D256, 1.5
+
+[Begin Action 9108]
+Interpolate Blend
+6010,2, 0,0, 20, , A
+Interpolate Blend
+Interpolate Scale
+6010,2, 0,0, 39, , A
+Interpolate Blend
+Interpolate Scale
+6010,2, 0,0, 1, , AS20D256, 1.5
+
+[Begin Action 9109]
+Interpolate Blend
+6006,6, 0,0, 39, , AS0D256
+Interpolate Blend
+6006,6, 0,0, -1, , A
+
+[Begin Action 10000]
+7700,0, 0,0, 1, , A
+7700,1, 0,0, 1, , A
+7700,2, 0,0, 1, , A
+7700,3, 0,0, 1, , A
+7700,4, 0,0, 1, , A
+7700,6, 0,0, 1, , A
+7700,7, 0,0, 1, , A
+7700,8, 0,0, 1, , A
+7700,9, 0,0, 1, , A
+7700,5, 0,0, 1, , A
+7700,10, 0,0, 1, , A
+7700,11, 0,0, 1, , A
+7700,12, 0,0, 1, , A
+7700,13, 0,0, 1, , A
+7700,14, 0,0, 1, , A
+7700,15, 0,0, 1, , A
+7700,16, 0,0, 1, , A
+7700,17, 0,0, 1, , A
+7700,18, 0,0, 1, , A
+7700,19, 0,0, 1, , A
+7700,20, 0,0, 1, , A
+7700,21, 0,0, 1, , A
+7700,22, 0,0, 1, , A
+7700,23, 0,0, 1, , A
+7700,24, 0,0, 1, , A
+7700,25, 0,0, 1, , A
+7700,26, 0,0, 1, , A
+7700,27, 0,0, 1, , A
+7700,28, 0,0, 1, , A
+7700,29, 0,0, 1, , A
+7700,30, 0,0, 1, , A
+7700,31, 0,0, 1, , A
+7700,32, 0,0, 1, , A
+7700,33, 0,0, 1, , A
+7700,34, 0,0, 1, , A
+7700,35, 0,0, 1, , A
+7700,36, 0,0, 1, , A
+7700,37, 0,0, 1, , A
+
+[Begin Action 10005]
+Interpolate Blend
+Interpolate Scale
+7710,0, 0,0, 4, , AS128D256, 0.8,0.8
+Interpolate Blend
+Interpolate Scale
+7710,0, 0,0, 1, , A
+Interpolate Blend
+Interpolate Scale
+7710,0, 0,0, 29, , A
+Interpolate Blend
+Interpolate Scale
+7710,0, 0,0, 1, , AS0D256, 0.5,0.5
+
+[Begin Action 10010]
+
+;-------------------------
+; stand
+[Begin Action 0]
+Clsn2Default: 1
+  Clsn2[0] = -17, -118, 23, 4
+0,0, 0,0, 12
+0,1, 0,0, 12
+0,2, 0,0, 12
+0,3, 0,0, 12
+0,2, 0,0, 12
+0,1, 0,0, 12
+0,0, 0,0, 12
+
+; turn
+[Begin Action 5]
+Clsn2: 1
+  Clsn2[0] = -23, -118, 17, 4
+0,0, 0,0, 2, H
+Clsn2: 1
+  Clsn2[0] = -17, -118, 23, 4
+0,0, 0,0, 2
+
+; crouch turn
+[Begin Action 6]
+Clsn2: 1
+  Clsn2[0] = -38, -62, 26, 4
+11,0, 0,0, 2, H
+Clsn2: 1
+  Clsn2[0] = -26, -62, 38, 4
+11,0, 0,0, 2
+
+; stand to crouch
+[Begin Action 10]
+Clsn2: 1
+  Clsn2[0] = -18, -109, 27, 4
+10,0, 0,0, 3
+Clsn2: 1
+  Clsn2[0] = -28, -71, 36, 4
+10,1, 0,0, 4
+
+; crouch
+[Begin Action 11]
+Clsn2: 1
+  Clsn2[0] = -26, -62, 38, 4
+11,0, 0,0, -1
+
+; crouch to stand
+[Begin Action 12]
+Clsn2: 1
+  Clsn2[0] = -28, -71, 36, 4
+10,1, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -18, -109, 27, 4
+10,0, 0,0, 3
+
+; walk forward
+[Begin Action 20]
+Clsn2Default: 1
+  Clsn2[0] = -20, -120, 20, 2
+20,0, 0,0, 9
+20,1, 0,0, 9
+20,2, 0,0, 9
+20,3, 0,0, 9
+20,4, 0,0, 9
+20,5, 0,0, 9
+20,6, 0,0, 9
+20,7, 0,0, 9
+
+; walk back
+[Begin Action 21]
+Clsn2Default: 1
+  Clsn2[0] = -21, -119, 24, 2
+21,0, 0,0, 10
+21,1, 0,0, 10
+21,2, 0,0, 10
+21,3, 0,0, 10
+21,4, 0,0, 10
+21,5, 0,0, 10
+21,6, 0,0, 10
+21,7, 0,0, 10
+
+; jump start
+[Begin Action 40]
+Clsn2: 1
+  Clsn2[0] = -18, -109, 27, 4
+10,0, 0,0, 2
+
+; jump
+[Begin Action 41]
+Clsn2: 1
+  Clsn2[0] = -20, -119, 25, 0
+40,0, 0,0, 12
+Clsn2: 1
+  Clsn2[0] = -20, -119, 26, -22
+40,1, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -22, -119, 26, -35
+40,2, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -20, -119, 26, -22
+40,1, 0,0, 3
+LoopStart
+Clsn2: 1
+  Clsn2[0] = -20, -119, 25, 0
+40,0, 0,0, -1
+
+; jump forward
+[Begin Action 42]
+Clsn2: 1
+  Clsn2[0] = -20, -119, 25, 0
+40,0, 0,0, 12
+Clsn2: 1
+  Clsn2[0] = -20, -119, 26, -22
+40,1, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -22, -119, 26, -35
+40,2, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -20, -119, 26, -22
+40,1, 0,0, 3
+LoopStart
+Clsn2: 1
+  Clsn2[0] = -20, -119, 25, 0
+40,0, 0,0, -1
+
+; jump back
+[Begin Action 43]
+Clsn2: 1
+  Clsn2[0] = -20, -119, 25, 0
+40,0, 0,0, 12
+Clsn2: 1
+  Clsn2[0] = -20, -119, 26, -22
+40,1, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -22, -119, 26, -35
+40,2, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -20, -119, 26, -22
+40,1, 0,0, 3
+LoopStart
+Clsn2: 1
+  Clsn2[0] = -20, -119, 25, 0
+40,0, 0,0, -1
+
+; jump land
+[Begin Action 47]
+Clsn2: 1
+  Clsn2[0] = -18, -109, 27, 4
+10,0, 0,0, 3
+
+; run
+[Begin Action 100]
+Clsn2: 2
+  Clsn2[0] = 7, -76, 63, -38
+  Clsn2[1] = -32, -60, 43, -7
+100,0, 0,0, 4
+Clsn2: 2
+  Clsn2[0] = 0, -78, 55, 0
+  Clsn2[1] = -46, -53, 29, 0
+100,1, 0,0, 4
+Clsn2: 2
+  Clsn2[0] = -11, -77, 44, 1
+  Clsn2[1] = -46, -53, 29, 0
+100,2, 0,0, 4
+Clsn2: 2
+  Clsn2[0] = -11, -77, 44, 1
+  Clsn2[1] = -46, -53, 29, 0
+100,3, 0,0, 4
+Clsn2: 2
+  Clsn2[0] = -5, -76, 62, -49
+  Clsn2[1] = -46, -53, 40, 0
+100,4, 0,0, 4
+Clsn2: 2
+  Clsn2[0] = -15, -78, 52, -51
+  Clsn2[1] = -46, -51, 40, 2
+100,5, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -48, -80, 44, 0
+100,6, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -24, -77, 46, 0
+100,7, 0,0, 4
+
+[Begin Action 101]
+10,0, 0,0, 5
+210,0, 0,0, 2
+
+; hop back
+[Begin Action 105]
+Clsn2: 2
+  Clsn2[0] = -21, -119, 35, -57
+  Clsn2[1] = 9, -73, 64, -13
+LoopStart
+105,0, 0,0, 10
+
+[Begin Action 120]
+Clsn2: 1
+  Clsn2[0] = -22, -118, 25, 0
+120,0, 0,0, 1
+[Begin Action 121]
+Clsn2: 1
+  Clsn2[0] = -26, -66, 23, 3
+121,0, 0,0, 1
+
+[Begin Action 122]
+Clsn2: 1
+  Clsn2[0] = -19, -123, 25, -36
+122,0, 0,0, 1
+
+[Begin Action 130]
+Clsn2: 1
+  Clsn2[0] = -22, -118, 25, 0
+130,0, 0,0, -1
+
+[Begin Action 131]
+Clsn2: 1
+  Clsn2[0] = -29, -72, 14, 4
+131,0, 0,0, -1
+
+[Begin Action 132]
+Clsn2: 1
+  Clsn2[0] = -19, -125, 25, -36
+152,0, 0,0, -1
+
+[Begin Action 140]
+Clsn2: 1
+  Clsn2[0] = -22, -118, 25, 0
+120,0, 0,0, 1
+
+[Begin Action 141]
+Clsn2: 1
+  Clsn2[0] = -26, -66, 23, 3
+121,0, 0,0, 1
+121,1, 0,0, 1
+
+[Begin Action 142]
+Clsn2: 1
+  Clsn2[0] = -19, -125, 25, -36
+122,0, 0,0, 1
+
+[Begin Action 150]
+Clsn2: 1
+  Clsn2[0] = -22, -118, 25, 0
+130,0, 0,0, 1
+
+[Begin Action 151]
+Clsn2: 1
+  Clsn2[0] = -28, -72, 16, 4
+131,0, 0,0, 1
+
+[Begin Action 152]
+Clsn2: 1
+  Clsn2[0] = -19, -125, 25, -36
+152,0, 0,0, 1
+
+[Begin Action 170]
+10,0, 0,0, 5, H
+10,1, 0,0, 5, H
+190,0, -3,-1, 5
+190,1, -3,-1, 5
+190,2, -3,-1, 5
+LoopStart
+190,3, -3,-1, 5
+
+[Begin Action 181]
+205,0, 0,0, 3
+220,1, 0,0, 2
+181,2, 0,0, 5
+181,1, 0,0, 7
+LoopStart
+181,0, 0,0, 10
+
+[Begin Action 190]
+42,2, 0,0, -1
+
+[Begin Action 191]
+Clsn2: 1
+  Clsn2[0] = -17, -119, 23, 4
+191,3, 0,0, 3
+Clsn2: 1
+  Clsn2[0] = -17, -119, 23, 4
+191,4, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -17, -119, 23, 4
+191,5, 0,0, 10
+Clsn2: 1
+  Clsn2[0] = -17, -119, 23, 4
+191,6, 0,0, 13
+Clsn2: 1
+  Clsn2[0] = -17, -119, 23, 4
+191,7, 0,0, 10
+Clsn2: 1
+  Clsn2[0] = -17, -119, 23, 4
+191,8, 0,0, 9
+Clsn2: 1
+  Clsn2[0] = -17, -119, 23, 4
+191,9, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -17, -119, 23, 4
+191,3, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -17, -109, 23, 4
+10,0, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -13, -93, 43, 3
+1200,0, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -1, -82, 55, 3
+1200,5, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -1, -82, 55, 3
+1200,6, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -1, -82, 55, 3
+1200,7, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -1, -82, 55, 3
+1200,6, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -1, -82, 55, 3
+1200,5, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -1, -82, 55, 3
+1200,6, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -1, -82, 55, 3
+1200,7, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -1, -82, 55, 3
+1200,6, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -14, -92, 42, 4
+1200,0, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -18, -109, 25, 4
+10,0, 0,0, 6
+
+; taunt
+[Begin Action 195]
+Clsn2: 1
+  Clsn2[0] = -17, -119, 23, 4
+191,3, 0,0, 3
+Clsn2: 1
+  Clsn2[0] = -17, -119, 23, 4
+191,4, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -17, -119, 23, 4
+191,5, 0,0, 10
+Clsn2: 1
+  Clsn2[0] = -17, -119, 23, 4
+191,6, 0,0, 13
+Clsn2: 1
+  Clsn2[0] = -17, -119, 23, 4
+191,7, 0,0, 10
+Clsn2: 1
+  Clsn2[0] = -17, -119, 23, 4
+191,8, 0,0, 9
+Clsn2: 1
+  Clsn2[0] = -17, -119, 23, 4
+191,9, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -17, -119, 23, 4
+191,3, 0,0, 6
+
+;---------------------------
+; a
+[Begin Action 200]
+Clsn2: 1
+  Clsn2[0] = -15, -114, 30, 4
+200,0, 0,0, 4
+Clsn2: 2
+  Clsn2[0] = -14, -116, 28, 4
+  Clsn2[1] = 22, -86, 55, -67
+Clsn1: 1
+  Clsn1[0] = 22, -87, 56, -67
+200,1, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -14, -114, 30, 4
+200,0, 0,0, 8
+
+[Begin Action 201]
+Clsn1: 1
+  Clsn1[0] = 26, -86, 60, -62
+Clsn2: 2
+  Clsn2[0] = -19, -106, 33, 1
+  Clsn2[1] = 29, -85, 59, -63
+202,0, 0,0, 3
+Clsn2: 2
+  Clsn2[0] = -12, -111, 33, 1
+  Clsn2[1] = 29, -101, 51, -75
+202,1, 0,0, 4
+Clsn2: 2
+  Clsn2[0] = -25, -120, 20, 0
+  Clsn2[1] = 19, -39, 34, 1
+202,2, 0,0, 6
+Clsn2: 2
+  Clsn2[0] = -23, -119, 22, 1
+  Clsn2[1] = 22, -36, 36, 1
+202,3, 0,0, 5
+
+[Begin Action 202]
+Clsn2: 1
+  Clsn2[0] = -18, -117, 26, 3
+203,0, 0,0, 3
+Clsn2: 1
+  Clsn2[0] = -14, -116, 24, 4
+203,1, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -4, -108, 31, 4
+203,2, 0,0, 3
+Clsn2: 1
+  Clsn2[0] = -4, -104, 50, 4
+203,3, 0,0, 4
+Clsn1: 2
+  Clsn1[0] = 51, -83, 73, -59
+  Clsn1[1] = 66, -72, 90, -53
+Clsn2: 3
+  Clsn2[0] = -4, -91, 52, 4
+  Clsn2[1] = 67, -71, 89, -54
+  Clsn2[2] = 51, -81, 73, -60
+203,4, 0,0, 3
+Clsn2: 1
+  Clsn2[0] = -4, -97, 46, 4
+203,5, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -2, -106, 44, 4
+203,6, 0,0, 5
+
+[Begin Action 204]
+Clsn2: 1
+  Clsn2[0] = -3, -107, 49, 1
+201,0, 0,0, 3
+Clsn2: 1
+  Clsn2[0] = -3, -107, 49, 1
+202,0, 16,0, 2
+Clsn1: 1
+  Clsn1[0] = 50, -105, 108, -82
+Clsn2: 2
+  Clsn2[0] = -1, -116, 51, 1
+  Clsn2[1] = 50, -104, 107, -83
+201,1, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -3, -107, 49, 1
+202,0, 16,0, 3
+Clsn2: 1
+  Clsn2[0] = -3, -107, 49, 1
+201,0, 0,0, 4
+
+[Begin Action 205]
+Clsn2: 1
+  Clsn2[0] = -16, -118, 21, 3
+205,0, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -16, -118, 21, 3
+205,1, 0,0, 8
+Clsn2: 1
+  Clsn2[0] = -16, -118, 21, 3
+205,2, 0,0, 8
+Clsn2: 1
+  Clsn2[0] = -2, -107, 50, 3
+205,3, 0,0, 3
+Clsn1: 2
+  Clsn1[0] = 66, -51, 103, -14
+  Clsn1[1] = 47, -69, 80, -33
+Clsn2: 3
+  Clsn2[0] = -2, -87, 57, 3
+  Clsn2[1] = 48, -69, 81, -32
+  Clsn2[2] = 65, -51, 102, -13
+205,4, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -2, -106, 50, 1
+205,3, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -15, -115, 30, 3
+200,0, 0,0, 7
+Clsn2: 1
+  Clsn2[0] = -14, -118, 21, 0
+205,0, 0,0, 9
+
+; b
+[Begin Action 210]
+Clsn2: 2
+  Clsn2[0] = -28, -117, 16, 4
+  Clsn2[1] = 16, -57, 32, 4
+210,0, 0,0, 4
+Clsn2: 2
+  Clsn2[0] = -28, -117, 5, 4
+  Clsn2[1] = 5, -70, 32, -17
+210,1, 0,0, 4
+Clsn1: 3
+  Clsn1[0] = 38, -36, 63, -15
+  Clsn1[1] = 23, -49, 45, -23
+  Clsn1[2] = 4, -59, 33, -36
+Clsn2: 4
+  Clsn2[0] = -41, -111, 5, 4
+  Clsn2[1] = 5, -58, 32, -36
+  Clsn2[2] = 24, -47, 45, -24
+  Clsn2[3] = 40, -35, 61, -16
+210,2, 0,0, 4
+Clsn2: 2
+  Clsn2[0] = -28, -117, 5, 4
+  Clsn2[1] = 5, -70, 32, -17
+210,1, 0,0, 4
+Clsn2: 2
+  Clsn2[0] = -28, -117, 16, 4
+  Clsn2[1] = 16, -57, 32, 4
+210,0, 0,0, 4
+
+[Begin Action 215]
+Clsn2: 2
+  Clsn2[0] = -28, -117, 16, 4
+  Clsn2[1] = 16, -57, 32, 4
+210,0, 0,0, 3
+Clsn2: 2
+  Clsn2[0] = -28, -117, 5, 4
+  Clsn2[1] = 5, -70, 32, -17
+210,1, 0,0, 2
+Clsn2: 2
+  Clsn2[0] = -41, -112, 0, 4
+  Clsn2[1] = -1, -83, 48, -45
+210,3, 0,0, 1
+Clsn1: 2
+  Clsn1[0] = -1, -75, 43, -54
+  Clsn1[1] = 26, -83, 69, -65
+Clsn2: 3
+  Clsn2[0] = -49, -107, 0, 4
+  Clsn2[1] = 0, -73, 42, -55
+  Clsn2[2] = 27, -82, 68, -66
+210,4, 0,0, 6
+Clsn2: 2
+  Clsn2[0] = -41, -112, 0, 4
+  Clsn2[1] = -1, -83, 48, -45
+210,3, 0,0, 2
+Clsn2: 2
+  Clsn2[0] = -28, -117, 5, 4
+  Clsn2[1] = 5, -70, 32, -17
+210,1, 0,0, 3
+Clsn2: 2
+  Clsn2[0] = -28, -117, 16, 4
+  Clsn2[1] = 16, -57, 32, 4
+210,0, 0,0, 5
+
+; c
+[Begin Action 220]
+220,0, 0,0, 4
+220,1, 0,0, 2
+220,2, 0,0, 5
+220,3, 0,0, 8
+220,2, 0,0, 4
+220,1, 0,0, 4
+220,0, 0,0, 4
+
+[Begin Action 225]
+Clsn2: 1
+  Clsn2[0] = -19, -111, 25, 1
+220,6, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -24, -105, 25, 2
+220,7, 0,0, 2
+Clsn2: 2
+  Clsn2[0] = -20, -100, 30, 2
+  Clsn2[1] = 27, -63, 57, -47
+220,8, 0,0, 2
+Clsn1: 2
+  Clsn1[0] = 68, -94, 113, -76
+  Clsn1[1] = 30, -90, 78, -68
+Clsn2: 3
+  Clsn2[0] = -18, -103, 38, 2
+  Clsn2[1] = 69, -93, 111, -77
+  Clsn2[2] = 31, -89, 76, -69
+220,9, 0,0, 7
+Clsn2: 3
+  Clsn2[0] = -18, -103, 38, 2
+  Clsn2[1] = 59, -89, 101, -73
+  Clsn2[2] = 37, -82, 81, -61
+220,10, 0,0, 5
+Clsn2: 2
+  Clsn2[0] = -20, -100, 30, 2
+  Clsn2[1] = 27, -63, 57, -47
+220,8, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -24, -105, 25, 2
+220,7, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -111, 25, 1
+220,6, 0,0, 7
+
+; shift
+[Begin Action 230]
+Clsn2Default: 1
+  Clsn2[0] = -17, -118, 23, 4
+230,0, 0,0, 4
+230,1, 0,0, 4
+230,2, 0,0, 4
+230,3, 0,0, 4
+230,4, 0,0, 4
+230,5, 0,0, 4
+230,6, 0,0, 4
+Clsn1: 1
+  Clsn1[0] = 15, -118, 55, 4
+230,7, 0,0, 4
+230,8, 0,0, 4
+230,9, 0,0, 4
+230,10, 0,0, 4
+
+; crouch a
+[Begin Action 400]
+Clsn2: 1
+  Clsn2[0] = -16, -67, 48, 4
+400,1, 0,0, 4
+Clsn1: 1
+  Clsn1[0] = 41, -60, 96, -43
+Clsn2: 2
+  Clsn2[0] = -16, -70, 48, 4
+  Clsn2[1] = 42, -58, 95, -44
+400,2, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -16, -67, 48, 4
+400,1, 0,0, 5
+
+; crouch b
+[Begin Action 410]
+Clsn2: 1
+  Clsn2[0] = -28, -62, 21, 4
+410,0, 0,0, 4
+Clsn2: 2
+  Clsn2[0] = -37, -59, 12, 5
+  Clsn2[1] = 11, -35, 43, -1
+410,1, 0,0, 2
+Clsn1: 2
+  Clsn1[0] = 11, -24, 44, -4
+  Clsn1[1] = 40, -16, 79, 4
+Clsn2: 3
+  Clsn2[0] = -43, -50, 12, 5
+  Clsn2[1] = 11, -23, 43, -5
+  Clsn2[2] = 42, -14, 78, 3
+410,2, 0,0, 7
+Clsn2: 2
+  Clsn2[0] = -37, -59, 12, 5
+  Clsn2[1] = 11, -35, 43, -1
+410,1, 0,0, 3
+Clsn2: 1
+  Clsn2[0] = -28, -62, 21, 4
+410,0, 0,0, 6
+
+; crouch c
+[Begin Action 420]
+Clsn2: 1
+  Clsn2[0] = -26, -66, 29, 4
+420,0, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -28, -69, 27, 2
+420,1, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -21, -67, 34, 2
+420,2, 0,0, 2
+Clsn1: 2
+  Clsn1[0] = 34, -30, 69, -6
+  Clsn1[1] = 61, -18, 109, 1
+Clsn2: 3
+  Clsn2[0] = -18, -66, 37, 2
+  Clsn2[1] = 35, -28, 68, -7
+  Clsn2[2] = 63, -18, 108, 0
+420,3, 0,0, 7
+Clsn2: 1
+  Clsn2[0] = -22, -67, 33, 2
+420,2, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -28, -69, 27, 2
+420,1, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -19, -67, 27, 4
+420,0, 0,0, 7
+
+; air a
+[Begin Action 600]
+Clsn2: 1
+  Clsn2[0] = -14, -118, 32, -36
+600,0, 0,0, 5
+LoopStart
+Clsn1: 2
+  Clsn1[0] = 32, -98, 47, -74
+  Clsn1[1] = 42, -85, 62, -57
+Clsn2: 3
+  Clsn2[0] = -16, -118, 33, -39
+  Clsn2[1] = 33, -97, 46, -75
+  Clsn2[2] = 42, -84, 61, -58
+600,1, 0,0, 9
+
+; air b
+[Begin Action 610]
+Clsn2: 1
+  Clsn2[0] = -15, -124, 33, -37
+610,0, 0,0, 6
+LoopStart
+Clsn1: 3
+  Clsn1[0] = 12, -83, 32, -55
+  Clsn1[1] = 23, -70, 43, -40
+  Clsn1[2] = 40, -54, 66, -25
+Clsn2: 3
+  Clsn2[0] = -21, -126, 27, -54
+  Clsn2[1] = 23, -70, 43, -41
+  Clsn2[2] = 39, -52, 65, -26
+610,1, 0,0, 7
+
+; air c
+[Begin Action 620]
+Clsn2: 1
+  Clsn2[0] = -14, -125, 34, -33
+620,0, 0,0, 3
+Clsn2: 1
+  Clsn2[0] = -15, -125, 24, -32
+620,1, 0,0, 5
+LoopStart
+Clsn1: 2
+  Clsn1[0] = 17, -89, 58, -67
+  Clsn1[1] = 46, -79, 95, -59
+Clsn2: 3
+  Clsn2[0] = -17, -127, 22, -49
+  Clsn2[1] = 17, -88, 57, -67
+  Clsn2[2] = 47, -78, 94, -60
+620,2, 0,0, 9
+
+; air shift
+[Begin Action 630]
+Clsn2: 1
+  Clsn2[0] = -18, -129, 27, -35
+630,0, 0,0, 3
+Clsn2: 1
+  Clsn2[0] = -20, -134, 17, -35
+630,1, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -20, -132, 17, -28
+630,2, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -22, -132, 27, -44
+630,3, 0,0, 5
+Clsn1: 2
+  Clsn1[0] = 31, -107, 53, -79
+  Clsn1[1] = 48, -93, 69, -67
+Clsn2: 3
+  Clsn2[0] = -13, -128, 36, -44
+  Clsn2[1] = 32, -106, 52, -80
+  Clsn2[2] = 48, -91, 69, -68
+630,4, 0,0, 12
+Clsn2: 1
+  Clsn2[0] = -29, -133, 26, -28
+630,5, 0,0, 7
+Clsn2: 1
+  Clsn2[0] = -21, -124, 19, -35
+630,6, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -21, -119, 24, -21
+40,1, 0,0, 3
+Clsn2: 1
+  Clsn2[0] = -21, -119, 24, 0
+40,0, 0,0, -1
+
+[Begin Action 800]
+Clsn1: 1
+  Clsn1[0] = 10, -120, 45, 3
+Clsn2: 1
+  Clsn2[0] = -18, -120, 25, 3
+1300,22, 0,0, 2
+
+[Begin Action 810]
+201,1, 0,0, 2
+202,0, 16,0, 5
+800,0, 0,0, 20
+800,1, 0,0, 20
+800,2, 0,0, 6
+800,3, 0,0, 3
+800,4, 0,0, 12
+800,5, 0,0, 4
+800,6, 0,0, 5
+
+[Begin Action 815]
+201,1, 0,0, 2
+202,0, 16,0, 5
+800,0, 0,0, 20
+800,1, 0,0, 20
+800,9, 0,0, 10
+800,10, 0,0, 6
+800,11, 0,0, 3
+800,12, 0,0, 6
+800,13, 0,0, 4
+800,14, 0,0, 5
+
+[Begin Action 816]
+
+[Begin Action 820]
+5032,10, 0,0, 6
+5012,0, 0,0, 6
+5062,0, 0,0, 6
+5012,0, 0,0, 6
+5012,0, 0,0, 11
+5012,10, 0,0, 10
+5012,20, 0,0, 5
+5012,20, 0,0, 2
+5032,20, 0,0, 8
+
+[Begin Action 825]
+
+;---------------------------
+; seven serpents
+[Begin Action 1000]
+Clsn2: 1
+  Clsn2[0] = -18, -117, 26, 4
+1000,6, 0,0, 10
+Clsn2: 1
+  Clsn2[0] = -18, -110, 26, 4
+1000,7, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -9, -103, 39, 4
+1000,8, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = 1, -103, 50, 4
+1000,9, 0,0, 2
+Clsn1: 3
+  Clsn1[0] = 43, -83, 60, -59
+  Clsn1[1] = 59, -70, 76, -60
+  Clsn1[2] = 31, -86, 46, -71
+Clsn2: 2
+  Clsn2[0] = 6, -102, 43, 1
+  Clsn2[1] = 43, -83, 60, -59
+1000,10, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -5, -94, 47, 2
+1000,12, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = 3, -89, 55, 1
+1000,13, 0,0, 20
+Clsn2: 1
+  Clsn2[0] = -6, -94, 46, 0
+1000,12, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -6, -102, 43, 0
+1000,11, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -12, -110, 34, 4
+1000,7, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -18, -118, 28, 4
+1000,23, 0,0, 10
+
+[Begin Action 1001]
+Clsn2: 1
+  Clsn2[0] = 2, -94, 45, 3
+1000,14, 0,0, 2
+Clsn1: 1
+  Clsn1[0] = 34, -86, 81, -70
+Clsn2: 1
+  Clsn2[0] = -3, -99, 40, 3
+1000,15, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -16, -102, 41, 3
+1000,16, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -17, -100, 34, 3
+1000,17, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -14, -101, 39, 3
+1000,18, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -19, -110, 24, 3
+1000,19, 0,0, 8
+Clsn2: 1
+  Clsn2[0] = -16, -118, 24, 4
+1000,20, 0,0, 8
+Clsn2: 1
+  Clsn2[0] = -16, -118, 24, 4
+1000,21, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -16, -118, 24, 4
+1000,22, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -16, -118, 24, 4
+1000,23, 0,0, 8
+
+;---------------------------
+;  TRANQUILITY
+[Begin Action 1010]
+Clsn2: 1
+  Clsn2[0] = -16, -99, 30, 1
+Clsn1: 1
+  Clsn1[0] = 4, -95, 60, -22
+1000,0, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -18, -83, 31, 1
+1000,1, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -18, -85, 31, 1
+1000,2, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -18, -85, 31, 1
+1000,3, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -18, -85, 31, 1
+1000,4, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -23, -107, 23, 4
+1000,5, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -16, -117, 22, 4
+1000,6, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -15, -118, 23, 4
+1000,23, 0,0, 8
+
+[Begin Action 1011]
+Clsn2Default: 1
+  Clsn2[0] = -19, -120, 16, 2
+5000,0, 0,0, 4
+Interpolate Scale
+5000,0, 0,0, 1, H, , 0.4
+Interpolate Scale
+5000,0, 0,0, 4, H
+Interpolate Scale
+5000,0, 0,0, 1, , , 0.4
+Interpolate Scale
+5000,0, 0,0, 4
+Interpolate Scale
+5000,0, 0,0, 1, H, , 0.4
+Interpolate Scale
+5000,0, 0,0, 4, H
+Interpolate Scale
+5000,0, 0,0, 1, , , 0.4
+Interpolate Scale
+5000,0, 0,0, 4
+Interpolate Scale
+5000,0, 0,0, 1, H, , 0.4
+Interpolate Scale
+5000,0, 0,0, 4, H
+Interpolate Scale
+5000,0, 0,0, 1, , , 0.4
+Interpolate Scale
+5000,0, 0,0, 4
+Interpolate Scale
+5000,0, 0,0, 1, H, , 0.4
+Interpolate Scale
+5000,0, 0,0, 4, H
+Interpolate Scale
+5000,0, 0,0, 1, , , 0.4
+Interpolate Scale
+5000,0, 0,0, 9
+Interpolate Scale
+5000,0, 0,0, 1, H, , 0.4
+Interpolate Scale
+5000,0, 0,0, 9, H
+Interpolate Scale
+5000,0, 0,0, 1, , , 0.4
+Interpolate Scale
+LoopStart
+5000,0, 0,0, 14
+Interpolate Scale
+5000,0, 0,0, 1, H, , 0.4
+Interpolate Scale
+5000,0, 0,0, 14, H
+Interpolate Scale
+5000,0, 0,0, 1, , , 0.4
+Interpolate Scale
+
+[Begin Action 1012]
+5031,20, 0,-20, 4
+Interpolate Scale
+5031,20, 0,-20, 1, H, , 0.4
+Interpolate Scale
+5031,20, 0,-20, 4, H
+Interpolate Scale
+5031,20, 0,-20, 1, , , 0.4
+Interpolate Scale
+5031,20, 0,-20, 4
+Interpolate Scale
+5031,20, 0,-20, 1, H, , 0.4
+Interpolate Scale
+5031,20, 0,-20, 4, H
+Interpolate Scale
+5031,20, 0,-20, 1, , , 0.4
+Interpolate Scale
+5031,20, 0,-20, 4
+Interpolate Scale
+5031,20, 0,-20, 1, H, , 0.4
+Interpolate Scale
+5031,20, 0,-20, 4, H
+Interpolate Scale
+5031,20, 0,-20, 1, , , 0.4
+Interpolate Scale
+5031,20, 0,-20, 4
+Interpolate Scale
+5031,20, 0,-20, 1, H, , 0.4
+Interpolate Scale
+5031,20, 0,-20, 4, H
+Interpolate Scale
+5031,20, 0,-20, 1, , , 0.4
+Interpolate Scale
+5031,20, 0,-20, 9
+Interpolate Scale
+5031,20, 0,-20, 1, H, , 0.4
+Interpolate Scale
+5031,20, 0,-20, 9, H
+Interpolate Scale
+5031,20, 0,-20, 1, , , 0.4
+Interpolate Scale
+LoopStart
+5031,20, 0,-20, 14
+Interpolate Scale
+5031,20, 0,-20, 1, H, , 0.4
+Interpolate Scale
+5031,20, 0,-20, 14, H
+Interpolate Scale
+5031,20, 0,-20, 1, , , 0.4
+Interpolate Scale
+
+;---------------------------
+; FREEDOM
+[Begin Action 1020]
+Clsn2: 1
+  Clsn2[0] = 3, -94, 47, 0
+1000,14, 0,0, 10
+Clsn1: 1
+  Clsn1[0] = 22, -89, 81, -66
+Clsn2: 2
+  Clsn2[0] = -3, -99, 47, 0
+  Clsn2[1] = 23, -90, 82, -66
+1000,15, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -17, -102, 40, 0
+1000,16, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -18, -101, 39, 1
+1000,17, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -18, -101, 39, 1
+1000,18, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -19, -110, 24, 3
+1000,19, 0,0, 8
+Clsn2: 1
+  Clsn2[0] = -16, -118, 24, 4
+1000,20, 0,0, 8
+Clsn2: 1
+  Clsn2[0] = -16, -118, 24, 4
+1000,21, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -16, -118, 24, 4
+1000,22, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -16, -118, 24, 4
+1000,23, 0,0, 8
+
+;---------------------------
+; MONSTER
+[Begin Action 1030]
+
+;-----------------------
+; snake handler
+[Begin Action 1100]
+Clsn2: 1
+  Clsn2[0] = -12, -107, 36, 4
+LoopStart
+1100,0, 0,0, 8
+Clsn2Default: 1
+  Clsn2[0] = -12, -107, 36, 4
+1100,1, 0,0, 8
+1100,2, 0,0, 8
+1100,3, 0,0, 8
+1100,4, 0,0, 8
+1100,5, 0,0, 10
+
+[Begin Action 1102]
+1105,3, 0,0, 2, , A
+1105,3, 0,0, 2, , A1
+1105,2, 0,0, 2, , A
+1105,2, 0,0, 2, , A1
+1105,1, 0,0, 2, , A
+1105,1, 0,0, 2, , A1
+1105,0, 0,0, 2, , A
+1105,0, 0,0, 2, , A1
+
+; release
+[Begin Action 1105]
+Clsn2: 1
+  Clsn2[0] = -15, -114, 30, 4
+1100,6, 0,0, 2
+
+[Begin Action 1106]
+Clsn2: 1
+  Clsn2[0] = -12, -107, 36, 4
+1100,7, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = 9, -113, 50, 4
+1100,8, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -12, -114, 35, 4
+1100,11, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -12, -114, 35, 4
+1100,12, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -12, -114, 35, 4
+1100,13, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -12, -114, 35, 4
+1100,14, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -14, -114, 29, 4
+1100,15, 0,0, 6
+
+; 1108
+[Begin Action 1108]
+1106,2, 0,0, 1, , AS56D156, 1.1,1.1
+Interpolate Blend
+1106,7, 0,0, 1, , AS156D156, 1.1,1.1
+Interpolate Blend
+1106,8, 0,0, 1, , AS200D156, 1.1,1.1
+Interpolate Blend
+1106,20, 0,0, 1, , AS200D156, 1.1,1.1
+Interpolate Blend
+1109,0, 0,0, 1, , AS156D156, ,, 45
+Interpolate Blend
+1106,2, 0,-5, 1, V, AS78D156, 1.1,1.1
+Interpolate Blend
+1106,7, 0,-5, 1, V, AS56D156, 1.1,1.1
+Interpolate Blend
+1106,8, 0,-5, 1, V, AS126D156, 1.1,1.1
+Interpolate Blend
+1106,20, 0,-5, 1, V, AS200D156, 1.1,1.1
+Clsn1: 1
+  Clsn1[0] = -73, -10, 30, 10
+Interpolate Blend
+1109,1, 18,0, 4, , AS200D156
+Interpolate Blend
+1109,1, 18,0, 1, , AS0D256
+Interpolate Blend
+1106,2, 9,-5, 1, V, AS56D256, 1.1,1.1
+Interpolate Blend
+1106,7, 9,-5, 1, V, AS23D256, 1.1,1.1
+Interpolate Blend
+1106,8, 9,-5, 1, V, AS15D256, 1.1,1.1
+
+[Begin Action 1109]
+Clsn2: 1
+  Clsn2[0] = 1, -107, 49, 4
+1100,21, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -1, -100, 50, 4
+1100,22, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -13, -114, 35, 4
+1100,11, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -13, -114, 35, 4
+1100,12, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -13, -114, 35, 4
+1100,13, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -13, -114, 35, 4
+1100,14, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -14, -114, 29, 4
+1100,15, 0,0, 6
+
+;-----------------------
+; TRANQUILITY
+[Begin Action 1110]
+1106,2, 0,0, 1, , AS56D156, 1.1,1.1
+Interpolate Blend
+1106,7, 0,0, 1, , AS156D156, 1.1,1.1, 14
+Interpolate Blend
+1106,8, 0,0, 1, , AS200D156, 1.1,1.1, 26
+Interpolate Blend
+1106,20, 0,0, 1, , AS200D156, 1.1,1.1, 26
+Interpolate Blend
+1109,0, 0,0, 1, , AS156D156, ,, 55
+Interpolate Blend
+1106,2, 0,-5, 1, V, AS78D156, 1.1,1.1, 30
+Interpolate Blend
+1106,7, 0,-5, 1, V, AS56D156, 1.1,1.1, 10
+Interpolate Blend
+1106,8, 0,-5, 1, V, AS126D156, 1.1,1.1, 25
+Interpolate Blend
+1106,20, 0,-5, 1, V, AS200D156, 1.1,1.1
+Clsn1: 2
+  Clsn1[0] = 0, -33, 30, -3
+  Clsn1[1] = -21, -24, 15, 25
+Interpolate Blend
+1109,1, 17,-18, 4, , AS200D156, ,, 45
+Interpolate Blend
+1109,1, 18,0, 1, , AS0D256, ,, 25
+Interpolate Blend
+1106,2, 9,-5, 1, V, AS56D256, 1.1,1.1, 45
+Interpolate Blend
+1106,7, 9,-5, 1, V, AS23D256, 1.1,1.1, 46
+Interpolate Blend
+1106,8, 9,-5, 1, V, AS15D256, 1.1,1.1, 28
+
+[Begin Action 1111]
+1106,2, 0,0, 1, , AS56D156, 1.1,1.1
+Interpolate Blend
+1106,7, 0,0, 1, , AS156D156, 1.1,1.1, -14
+Interpolate Blend
+1106,8, 0,0, 1, , AS50D256, 1.1,1.1, -26
+Interpolate Blend
+1106,20, 0,0, 1, , AS200D156, 1.1,1.1, -26
+Interpolate Blend
+1109,0, 0,0, 1, , AS156D156
+Interpolate Blend
+1106,2, 0,-5, 1, V, AS78D156, 1.1,1.1, -30
+Interpolate Blend
+1106,7, 0,-5, 1, , AS56D156, 1.1,1.1, -10
+Interpolate Blend
+1106,8, 0,0, 1, , AS126D200, 1.1,1.1, 163
+Interpolate Blend
+1106,20, 0,-5, 1, , AS200D156, 1.1,1.1
+Clsn1: 2
+  Clsn1[0] = -7, 1, 28, 25
+  Clsn1[1] = -30, -18, 13, 16
+Interpolate Blend
+1109,1, 17,14, 4, , AS200D156, ,, -45
+Interpolate Blend
+1109,1, 18,0, 1, , AS0D256, ,, -25
+Interpolate Blend
+1106,2, 9,-5, 1, , AS56D256, 1.1,1.1, 319
+Interpolate Blend
+1106,7, 9,-5, 1, , AS23D256, 1.1,1.1, -45
+Interpolate Blend
+1106,8, 9,-5, 1, , AS15D256, 1.1,1.1, 336
+
+;-----------------------
+; FREEDOM
+[Begin Action 1120]
+
+;-----------------------
+; MONSTER
+[Begin Action 1130]
+
+;------------------------
+; sadomaso
+[Begin Action 1200]
+Clsn2: 1
+  Clsn2[0] = -13, -92, 42, 4
+1200,0, 0,0, 4
+Clsn1: 1
+  Clsn1[0] = 1, -83, 54, 3
+Clsn2: 1
+  Clsn2[0] = 2, -82, 53, 2
+1200,5, 0,0, 5
+Clsn1: 1
+  Clsn1[0] = 1, -83, 54, 3
+Clsn2: 1
+  Clsn2[0] = 2, -82, 53, 2
+1200,6, 0,0, 5
+Clsn1: 1
+  Clsn1[0] = 1, -83, 54, 3
+Clsn2: 1
+  Clsn2[0] = 2, -82, 53, 2
+1200,7, 0,0, 4
+Clsn1: 1
+  Clsn1[0] = 1, -83, 54, 3
+Clsn2: 1
+  Clsn2[0] = 2, -82, 53, 2
+1200,6, 0,0, 6
+Clsn1: 1
+  Clsn1[0] = 1, -83, 54, 3
+Clsn2: 1
+  Clsn2[0] = 2, -82, 53, 2
+1200,5, 0,0, 4
+Clsn1: 1
+  Clsn1[0] = 1, -83, 54, 3
+Clsn2: 1
+  Clsn2[0] = 2, -82, 53, 2
+1200,6, 0,0, 5
+Clsn1: 1
+  Clsn1[0] = 1, -83, 54, 3
+Clsn2: 1
+  Clsn2[0] = 2, -82, 53, 2
+1200,7, 0,0, 4
+Clsn1: 1
+  Clsn1[0] = 1, -83, 54, 3
+Clsn2: 1
+  Clsn2[0] = 2, -82, 53, 2
+1200,6, 0,0, 6
+Clsn1: 1
+  Clsn1[0] = 1, -83, 54, 3
+Clsn2: 1
+  Clsn2[0] = 2, -82, 53, 2
+1200,5, 0,0, 4
+Clsn1: 1
+  Clsn1[0] = 1, -83, 54, 3
+Clsn2: 1
+  Clsn2[0] = 2, -82, 53, 2
+1200,6, 0,0, 4
+Clsn1: 1
+  Clsn1[0] = 1, -83, 54, 3
+Clsn2: 1
+  Clsn2[0] = 2, -82, 53, 2
+1200,7, 0,0, 4
+Clsn1: 1
+  Clsn1[0] = 1, -83, 54, 3
+Clsn2: 1
+  Clsn2[0] = 2, -82, 53, 2
+1200,6, 0,0, 4
+Clsn1: 1
+  Clsn1[0] = 1, -83, 54, 3
+Clsn2: 1
+  Clsn2[0] = 2, -82, 53, 2
+1200,5, 0,0, 4
+Clsn1: 1
+  Clsn1[0] = 1, -83, 54, 3
+Clsn2: 1
+  Clsn2[0] = 2, -82, 53, 2
+1200,6, 0,0, 5
+Clsn1: 1
+  Clsn1[0] = 1, -83, 54, 3
+Clsn2: 1
+  Clsn2[0] = 2, -82, 53, 2
+1200,7, 0,0, 4
+Clsn1: 1
+  Clsn1[0] = 1, -83, 54, 3
+Clsn2: 1
+  Clsn2[0] = 2, -82, 53, 2
+1200,6, 0,0, 6
+Clsn1: 1
+  Clsn1[0] = 1, -83, 54, 3
+Clsn2: 1
+  Clsn2[0] = 2, -82, 53, 2
+1200,5, 0,0, 4
+Clsn1: 1
+  Clsn1[0] = 1, -83, 54, 3
+Clsn2: 1
+  Clsn2[0] = 2, -82, 53, 2
+1200,6, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -13, -92, 42, 4
+1200,0, 0,0, 6
+
+[Begin Action 1205]
+Clsn2: 1
+  Clsn2[0] = -9, -106, 47, 2
+1200,8, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = 11, -94, 64, 1
+1200,9, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = 21, -87, 76, 1
+1200,10, 0,0, 2
+Clsn1: 1
+  Clsn1[0] = 12, -119, 95, -23
+Clsn2: 2
+  Clsn2[0] = 13, -87, 69, 1
+  Clsn2[1] = 70, -119, 95, -71
+1200,11, 0,0, 12
+Clsn2: 2
+  Clsn2[0] = 13, -87, 69, 1
+  Clsn2[1] = 70, -119, 95, -71
+1200,12, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = 21, -87, 76, 1
+1200,10, 0,0, 7
+Clsn2: 1
+  Clsn2[0] = 11, -94, 64, 1
+1200,9, 0,0, 8
+Clsn2: 1
+  Clsn2[0] = -9, -106, 47, 2
+1200,8, 0,0, 8
+
+[Begin Action 1206]
+Interpolate Blend
+Interpolate Scale
+8000,4, 0,0, 4, , AS156D256, 0.1,0.8, 360
+Interpolate Angle
+Interpolate Blend
+Interpolate Scale
+8000,4, 0,0, 1, , A, 0.8,0.1, 180
+Interpolate Scale
+8000,6, 0,0, 4, , A, 0.8,0.2, 180
+Interpolate Angle
+Interpolate Blend
+Interpolate Scale
+8000,6, 0,0, 1, , AS156D256, 0.7,0.6
+
+[Begin Action 1207]
+Interpolate Scale
+8001,3, 0,0, 9, , S, 0.1,0.1, 131
+Interpolate Scale
+Interpolate Angle
+8001,0, 0,0, 1, , S, 0.1,5, 131
+8001,5, 0,0, 4, , S, 0.1,5, 131
+Interpolate Blend
+8001,2, 0,0, 9, , A, 0.1,5, 131
+Interpolate Blend
+8001,3, 0,0, 1, , AS0D256, 0.1,5, 131
+Interpolate Scale
+
+[Begin Action 1208]
+Interpolate Scale
+8001,3, 0,0, 9, , S, 0.1,0.1, 143
+Interpolate Scale
+Interpolate Angle
+8001,0, 0,0, 1, , S, 0.1,5, 143
+8001,0, 0,0, 4, , S, 0.1,5, 143
+Interpolate Blend
+8001,2, 0,0, 9, , A, 0.1,5, 143
+Interpolate Blend
+8001,3, 0,0, 1, , AS0D256, 0.1,5, 143
+Interpolate Scale
+
+[Begin Action 1209]
+Interpolate Scale
+8001,3, 0,0, 9, , S, 0.1,0.1, 156
+Interpolate Scale
+Interpolate Angle
+8001,0, 0,0, 1, , S, 0.1,5, 156
+8001,0, 0,0, 4, , S, 0.1,5, 156
+Interpolate Blend
+8001,2, 0,0, 9, , A, 0.1,5, 156
+Interpolate Blend
+8001,3, 0,0, 1, , AS0D256, 0.1,5, 156
+Interpolate Scale
+
+;------------------------
+; TRANQUILITY
+[Begin Action 1210]
+191,0, 0,0, 5
+191,1, 0,0, 4
+191,2, 0,0, 3
+191,1, 0,0, 3
+191,2, 0,0, 3
+191,1, 0,0, 3
+191,2, 0,0, 3
+191,1, 0,0, 3
+191,1, 0,0, 3
+191,2, 0,0, 3
+191,1, 0,0, 3
+191,2, 0,0, 3
+191,1, 0,0, 3
+191,2, 0,0, 3
+191,1, 0,0, 3
+191,1, 0,0, 3
+191,2, 0,0, 3
+191,1, 0,0, 3
+191,2, 0,0, 3
+191,1, 0,0, 3
+191,2, 0,0, 3
+191,1, 0,0, 3
+191,0, 0,0, 4
+
+[Begin Action 1211]
+800,3, 0,0, 3
+800,4, 0,0, 12
+800,5, 0,0, 4
+201,1, 0,0, 2
+800,0, 0,0, 6
+800,1, 0,0, 20
+
+[Begin Action 1212]
+1300,20, 0,0, 2
+1300,21, 0,0, 2
+1300,22, 0,0, 2
+
+[Begin Action 1213]
+1100,7, 0,0, 3
+1100,9, 0,0, 3
+1100,7, 0,0, 3
+1100,8, 0,0, 3
+1100,7, 0,0, 3
+1100,10, 0,0, 3
+
+[Begin Action 1214]
+1300,12, 0,0, 2
+1300,13, 0,0, 5
+1300,14, 0,0, 6
+1300,15, 0,0, 6
+1300,13, 0,0, 1
+1300,12, 0,0, 1
+1300,16, 0,0, 5
+1300,17, 0,0, 4
+1300,13, 0,0, 1
+1300,12, 0,0, 1
+1300,16, 0,0, 5
+1300,17, 0,0, 4
+1300,13, 0,0, 1
+1300,12, 0,0, 1
+1300,16, 0,0, 5
+1300,17, 0,0, 4
+1300,13, 0,0, 1
+1300,12, 0,0, 1
+1300,16, 0,0, 5
+1300,17, 0,0, 4
+10,0, 0,0, 5
+
+[Begin Action 1215]
+5042,10, 0,0, 16
+5032,10, 0,0, 4
+5012,10, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = -11, -8, 15, 116
+5062,0, 0,0, -1
+
+[Begin Action 1216]
+5040,10, 0,0, 4
+Interpolate Scale
+5040,10, 0,0, 1, H, , 0.4
+Interpolate Scale
+5040,10, 0,0, 4, H
+Interpolate Scale
+5040,10, 0,0, 1, , , 0.4
+Interpolate Scale
+5040,10, 0,0, 4
+Interpolate Scale
+5040,10, 0,0, 1, H, , 0.4
+Interpolate Scale
+5040,10, 0,0, 4, H
+Interpolate Scale
+5040,10, 0,0, 1, , , 0.4
+Interpolate Scale
+5040,10, 0,0, 4
+Interpolate Scale
+5040,10, 0,0, 1, H, , 0.4
+Interpolate Scale
+5040,10, 0,0, 4, H
+Interpolate Scale
+5040,10, 0,0, 1, , , 0.4
+Interpolate Scale
+5040,10, 0,0, 4
+Interpolate Scale
+5040,10, 0,0, 1, H, , 0.4
+Interpolate Scale
+5040,10, 0,0, 4, H
+Interpolate Scale
+5040,10, 0,0, 1, , , 0.4
+Interpolate Scale
+5040,10, 0,0, 9
+Interpolate Scale
+5040,10, 0,0, 1, H, , 0.4
+Interpolate Scale
+5040,10, 0,0, 9, H
+Interpolate Scale
+5040,10, 0,0, 1, , , 0.4
+Interpolate Scale
+LoopStart
+5040,10, 0,0, 14
+Interpolate Scale
+5040,10, 0,0, 1, H, , 0.4
+Interpolate Scale
+5040,10, 0,0, 14, H
+Interpolate Scale
+5040,10, 0,0, 1, , , 0.4
+Interpolate Scale
+
+[Begin Action 1217]
+1400,12, 0,0, 6
+1400,13, 0,0, 5
+1400,14, 0,0, 6
+1400,15, 0,0, 5
+1400,16, 0,0, 6
+1400,17, 0,0, 5
+1400,16, 0,0, 6
+1400,17, 0,0, 5
+1400,16, 0,0, 6
+1400,17, 0,0, 5
+1400,16, 0,0, 6
+1400,17, 0,0, 5
+1400,16, 0,0, 6
+1400,17, 0,0, 5
+1400,16, 0,0, 5
+1400,17, 0,0, 7
+1400,16, 0,0, 6
+1400,17, 0,0, 8
+1400,16, 0,0, 10
+1400,17, 0,0, 8
+1300,0, -3,0, 7
+10,0, 0,0, 7
+
+;------------------------
+; FREEDOM
+[Begin Action 1220]
+
+;------------------------
+; MONSTER
+[Begin Action 1230]
+Clsn2: 1
+  Clsn2[0] = -7, -106, 48, 2
+1200,8, 0,0, 3
+Clsn2: 1
+  Clsn2[0] = 20, -112, 56, 0
+2500,17, 42,-1, 2
+Clsn1: 1
+  Clsn1[0] = 32, -119, 101, -76
+Clsn2: 2
+  Clsn2[0] = 20, -113, 56, -1
+  Clsn2[1] = 36, -119, 100, -77
+2500,18, 50,-2, 10
+Clsn2: 2
+  Clsn2[0] = 20, -113, 56, -1
+  Clsn2[1] = 36, -113, 100, -77
+2500,19, 49,-2, 8
+Clsn2: 2
+  Clsn2[0] = 20, -110, 56, -1
+  Clsn2[1] = 37, -75, 101, -58
+2500,20, 49,-1, 6
+Clsn2: 1
+  Clsn2[0] = 20, -110, 56, -1
+2500,17, 40,0, 6
+Clsn2: 1
+  Clsn2[0] = -7, -106, 48, 2
+1200,8, 0,0, 3
+Clsn2: 1
+  Clsn2[0] = -15, -110, 37, 4
+2500,25, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -15, -110, 37, 4
+2500,26, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -19, -110, 33, 4
+2500,27, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -110, 33, 4
+2500,28, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -110, 33, 4
+2500,27, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -110, 33, 4
+2500,28, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -110, 33, 4
+2500,27, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -110, 33, 4
+2500,28, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -110, 33, 4
+2500,27, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -110, 33, 4
+2500,28, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -110, 33, 4
+2500,27, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -110, 33, 4
+2500,28, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -110, 33, 4
+2500,27, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -110, 33, 4
+2500,28, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -110, 33, 4
+2500,27, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -110, 33, 4
+2500,28, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -110, 33, 4
+2500,27, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -110, 33, 4
+2500,28, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -110, 33, 4
+2500,27, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -110, 33, 4
+2500,28, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -110, 33, 4
+2500,27, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -110, 33, 4
+2500,28, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -18, -110, 34, 4
+2500,25, 0,0, 5
+
+;-------------------------
+; explosion headbutt
+[Begin Action 1300]
+201,1, 0,0, 2
+202,0, 16,0, 5
+800,0, 0,0, 4
+800,1, 0,0, 4
+1300,12, 0,0, 5
+1300,13, 0,0, 7
+1300,14, 0,0, 10
+1300,15, 0,0, 12
+1300,13, 0,0, 2
+1300,12, 0,0, 2
+1300,16, 0,0, 9
+1300,17, 0,0, 4
+5000,0, 0,0, 5
+5000,10, 0,0, 5
+5000,0, 0,0, 5
+5010,10, 0,0, 5
+5010,0, 0,0, 5
+1300,0, 0,0, 6
+1300,3, 0,0, 6
+1300,2, 0,0, 6
+1300,1, 0,0, 6
+1300,2, 0,0, 6
+1300,3, 0,0, 6
+1300,2, 0,0, 6
+1300,1, 0,0, 6
+1300,2, 0,0, 6
+1300,0, 0,0, 6
+10,0, 0,0, 5
+
+[Begin Action 1305]
+5032,10, 0,0, 6
+5012,0, 0,0, 6
+5062,0, 0,0, 6
+5012,0, 0,0, 6
+5012,0, 0,0, 11
+5012,10, 0,0, 10
+5012,20, 0,0, 5
+5032,0, 0,0, 5
+5032,10, 0,0, 5
+5032,30, 0,0, 5
+5032,40, 0,0, 5
+5032,50, 0,0, 5
+5062,10, 0,0, -1
+
+;-------------------------
+; TRANQUILITY
+[Begin Action 1310]
+Clsn2: 1
+  Clsn2[0] = -18, -117, 27, 4
+1300,4, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -19, -116, 26, 3
+1300,5, 0,0, 7
+Clsn2: 1
+  Clsn2[0] = -30, -112, 7, 3
+1300,6, 0,0, 10
+Clsn2: 1
+  Clsn2[0] = -31, -112, 4, 3
+1300,7, 0,0, 12
+Clsn1: 1
+  Clsn1[0] = 42, -83, 80, 4
+Clsn2: 1
+  Clsn2[0] = 8, -82, 78, 2
+1300,8, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = 17, -88, 87, 2
+1300,9, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = 14, -97, 84, 2
+1300,10, 0,0, 9
+Clsn2: 1
+  Clsn2[0] = 4, -98, 74, 2
+1300,11, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -10, -113, 38, 3
+1300,19, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -16, -120, 25, 3
+1300,22, 0,0, 5
+
+[Begin Action 1315]
+LoopStart
+5000,10, 0,0, 2
+5000,10, -2,0, 2
+
+;-------------------------
+; FREEDOM
+[Begin Action 1320]
+201,1, 0,0, 2
+202,0, 16,0, 5
+800,0, 0,0, 4
+800,1, 0,0, 4
+1300,12, 0,0, 5
+1300,13, 0,0, 7
+1300,14, 0,0, 10
+1300,15, 0,0, 12
+1300,13, 0,0, 2
+1300,12, 0,0, 2
+1300,16, 0,0, 9
+1300,17, 0,0, 4
+10,0, 0,0, 5
+
+[Begin Action 1325]
+5032,10, 0,0, 6
+5012,0, 0,0, 6
+5062,0, 0,0, 6
+5012,0, 0,0, 6
+5012,0, 0,0, 11
+5012,10, 0,0, 10
+5012,20, 0,0, 5
+LoopStart
+5000,10, 0,0, 2
+5000,10, -2,0, 2
+
+;-------------------------
+; MONSTER
+[Begin Action 1330]
+800,0, 0,0, 4
+800,1, 0,0, 4
+800,9, -15,0, 9
+800,10, -14,0, 4
+800,11, -14,0, 2
+800,12, -15,0, 3
+800,13, -7,0, 7
+800,14, 0,0, 6
+
+[Begin Action 1335]
+5032,10, 0,0, 6
+5012,0, 0,0, 6
+5062,0, 0,0, 6
+5012,0, 0,0, 6
+5012,10, 0,0, 10
+5012,20, 0,0, -1
+
+;---------------------------
+; Bash combo I
+[Begin Action 2000]
+Clsn2: 1
+  Clsn2[0] = -18, -114, 31, 4
+220,0, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -7, -110, 31, 4
+220,1, 0,0, 2
+Clsn2: 2
+  Clsn2[0] = -15, -119, 29, 2
+  Clsn2[1] = 12, -81, 55, -35
+Clsn1: 1
+  Clsn1[0] = 24, -87, 60, -28
+220,2, 0,0, 5
+Clsn2: 2
+  Clsn2[0] = -23, -115, 29, 1
+  Clsn2[1] = 19, -124, 98, -76
+Clsn1: 1
+  Clsn1[0] = 16, -136, 103, -70
+220,3, 0,0, 8
+Clsn2: 2
+  Clsn2[0] = -10, -116, 28, 1
+  Clsn2[1] = 15, -80, 55, -31
+220,2, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -8, -111, 32, 3
+220,1, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -18, -114, 33, 3
+220,0, 0,0, 4
+
+; Bash combo II
+[Begin Action 2100]
+Clsn2: 1
+  Clsn2[0] = -14, -117, 24, 1
+2000,0, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -15, -115, 22, 1
+2000,1, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -27, -113, 22, 1
+2000,2, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -25, -111, 18, 1
+2000,3, 0,0, 4
+Clsn2: 2
+  Clsn2[0] = -19, -108, 21, 0
+  Clsn2[1] = 18, -88, 46, -49
+2000,4, 0,0, 4
+Clsn2: 2
+  Clsn2[0] = -13, -119, 23, 0
+  Clsn2[1] = 15, -150, 48, -70
+2000,5, 0,0, 4
+Clsn2: 2
+  Clsn2[0] = -24, -121, 12, 1
+  Clsn2[1] = 6, -153, 39, -73
+2000,6, 0,0, 4
+Clsn2: 2
+  Clsn2[0] = -48, -109, -4, 4
+  Clsn2[1] = -3, -114, 50, -63
+Clsn1: 1
+  Clsn1[0] = -4, -123, 58, -62
+2000,7, 0,0, 4
+Clsn2: 2
+  Clsn2[0] = -32, -97, 4, 3
+  Clsn2[1] = 4, -57, 45, 1
+2000,8, 0,0, 4
+Clsn2: 2
+  Clsn2[0] = -32, -97, 4, 3
+  Clsn2[1] = 4, -57, 45, 1
+2000,9, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -20, -113, 27, 4
+2000,10, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -21, -116, 20, 4
+2000,11, 0,0, 6
+Clsn2: 1
+  Clsn2[0] = -21, -116, 20, 4
+2000,12, 0,0, 4
+
+[Begin Action 2110]
+Clsn2Default: 1
+  Clsn2[0] = -36, -110, 25, 4
+5000,10, 0,0, 2
+5000,10, -2,0, 2
+
+; Bash combo III
+[Begin Action 2200]
+Clsn2: 1
+  Clsn2[0] = -15, -114, 34, 1
+2500,21, -3,0, 4
+Clsn2: 2
+  Clsn2[0] = -44, -112, 5, 3
+  Clsn2[1] = 6, -77, 36, -50
+2500,22, -3,0, 4
+Clsn2: 1
+  Clsn2[0] = -3, -99, 48, 2
+Clsn1: 1
+  Clsn1[0] = 11, -21, 71, 2
+2500,23, -3,0, 6
+Clsn2: 1
+  Clsn2[0] = -3, -99, 48, 2
+2500,24, -3,0, 8
+Clsn2: 1
+  Clsn2[0] = -14, -114, 37, 2
+2500,21, -3,0, 5
+
+[Begin Action 2250]
+5010,10, 0,0, 2
+5020,30, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -47, -17, 55, 3
+5040,10, 0,0, -1
+
+; Bash combo end state
+[Begin Action 2300]
+Interpolate Blend
+Interpolate Scale
+2250,0, 0,0, 4, , A
+Interpolate Blend
+Interpolate Scale
+2250,1, 0,0, 1, , AS256D0
+2250,2, 0,0, 3
+2250,3, 0,0, 3
+2250,4, 0,0, 3
+2250,5, 0,0, 3
+Clsn1: 1
+  Clsn1[0] = -107, -52, 109, 59
+Interpolate Blend
+2250,6, 0,0, 9, , AS256D0
+Interpolate Blend
+2250,7, 0,0, 1, , AS0D256
+
+; Monster blow
+[Begin Action 2500]
+Clsn2: 1
+  Clsn2[0] = -26, -71, 26, 5
+2500,0, 0,0, 20
+Clsn2: 1
+  Clsn2[0] = -26, -74, 26, 5
+2500,1, 0,0, 3
+Clsn2: 2
+  Clsn2[0] = -18, -116, 26, 4
+  Clsn2[1] = 13, -115, 50, -67
+Clsn1: 1
+  Clsn1[0] = 10, -116, 51, -64
+200,1, -7,0, 6
+200,0, -7,0, 3
+
+[Begin Action 2501]
+Clsn2: 1
+  Clsn2[0] = -17, -171, 21, -3
+2500,2, 0,0, 7
+Clsn2: 1
+  Clsn2[0] = -34, -141, 34, -19
+2500,3, 0,0, 3
+Clsn2: 1
+  Clsn2[0] = -25, -126, 31, -37
+2500,4, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = -52, -130, 50, -41
+2500,5, 0,0, 3
+Clsn2: 2
+  Clsn2[0] = -71, -110, 52, -53
+  Clsn2[1] = 7, -71, 67, -21
+Clsn1: 1
+  Clsn1[0] = 6, -72, 67, -20
+2500,6, 0,0, -1
+
+[Begin Action 2502]
+2500,7, 0,0, 8
+2500,8, 0,0, 7
+2500,9, 0,0, 6
+2500,10, 0,0, 7
+2500,11, 0,0, 6
+2500,12, 0,0, 7
+2500,13, 0,0, 4
+2500,14, 0,0, 4
+2500,15, 0,0, 4
+2500,16, 0,0, 4
+2500,17, 19,0, 2
+210,0, 0,0, 5
+
+[Begin Action 2505]
+5032,40, 0,0, -1
+
+[Begin Action 2506]
+5032,30, 0,0, 4
+5032,50, 0,0, 4
+5042,10, 0,0, 4
+
+[Begin Action 2510]
+Interpolate Scale
+Interpolate Blend
+6005,0, 0,0, 2, , A, 0.3,0.3
+Interpolate Scale
+Interpolate Blend
+Interpolate Angle
+6005,0, 0,0, 1, , A, 0.2,0.2
+Interpolate Blend
+Interpolate Scale
+8000,2, 0,0, 2, , A, 0.5,0.5
+Interpolate Blend
+Interpolate Scale
+Interpolate Angle
+8000,2, 0,0, 2, , A, 0.5,0.2, 16
+Interpolate Scale
+Interpolate Angle
+Interpolate Blend
+8000,2, 0,0, 2, , AS200D256, 0.5,0.1, 128
+8000,2, 0,0, 2, , AS200D256, 0.5,0.5
+Interpolate Blend
+Interpolate Scale
+Interpolate Angle
+8000,2, 0,0, 2, , AS156D256, 0.5,0.2, 16
+Interpolate Scale
+Interpolate Angle
+Interpolate Blend
+8000,2, 0,0, 2, , AS126D256, 0.5,0.1, 128
+8000,2, 0,0, 2, , AS100D256, 0.5,0.5
+Interpolate Blend
+Interpolate Scale
+Interpolate Angle
+8000,2, 0,0, 2, , AS75D256, 0.5,0.2, 16
+Interpolate Scale
+Interpolate Angle
+Interpolate Blend
+8000,2, 0,0, 2, , AS0D256, 0.5,0.1, 128
+
+; Absurd special
+[Begin Action 3000]
+
+[Begin Action 3001]
+1400,0, 0,0, 5
+1400,1, 0,0, 4
+1400,2, 0,0, 5
+1400,3, 0,0, 4
+1400,2, 0,0, 5
+1400,3, 0,0, 4
+1400,2, 0,0, 5
+1400,3, 0,0, 4
+1400,4, 0,0, 6
+1400,5, 0,0, 7
+1400,6, 0,0, 5
+1400,7, 0,0, 4
+1400,8, 0,0, 3
+1400,9, 0,0, 3
+1400,10, 0,0, 3
+1400,11, 0,0, 3
+1400,10, 0,0, 3
+1400,9, 0,0, 3
+1400,10, 0,0, 3
+1400,11, 0,0, 3
+1400,10, 0,0, 3
+1400,9, 0,0, 3
+1400,10, 0,0, 3
+1400,11, 0,0, 3
+1400,12, 0,0, 4
+1400,13, 0,0, 3
+1400,14, 0,0, 4
+1400,15, 0,0, 4
+1400,16, 0,0, 4
+1400,17, 0,0, 3
+1400,16, 0,0, 4
+1400,17, 0,0, 3
+1400,16, 0,0, 4
+1400,17, 0,0, 4
+1400,16, 0,0, 5
+1400,17, 0,0, 4
+1400,16, 0,0, 5
+1400,17, 0,0, 6
+1400,16, 0,0, 6
+1400,17, 0,0, 7
+1400,16, 0,0, 6
+1400,17, 0,0, 8
+1400,16, 0,0, 10
+1400,17, 0,0, 7
+1300,0, -3,0, 7
+10,0, 0,0, 7
+
+[Begin Action 3002]
+1300,0, -3,0, 7
+10,0, 0,0, 7
+
+[Begin Action 3005]
+5040,10, 0,0, -1
+
+[Begin Action 3006]
+5040,20, 0,0, -1
+
+[Begin Action 3007]
+5040,0, 0,0, -1
+
+[Begin Action 3010]
+2500,21, 0,0, 4
+2500,22, 0,0, 4
+2500,23, 0,0, 4
+2500,24, 0,0, 3
+2500,22, 0,0, 6
+2500,23, 0,0, 4
+2500,24, 0,0, 3
+2500,22, 0,0, 6
+2500,23, 0,0, 4
+2500,24, 0,0, 3
+2500,22, 0,0, 6
+2500,23, 0,0, 4
+2500,24, 0,0, 3
+2500,22, 0,0, 6
+2500,23, 0,0, 4
+2500,24, 0,0, 6
+
+[Begin Action 3100]
+Clsn1Default: 1
+  Clsn1[0] = -40, -45, 53, 24
+1106,0, 0,0, 2, , S
+1106,1, 0,0, 2, , S
+1106,2, 0,0, 2, , S
+1106,4, 0,0, 2, , S
+1106,6, 0,0, 2, , S
+1106,7, 0,0, 2, , S
+1106,8, 0,0, 2, , S
+1106,9, 0,0, 2, , S
+1106,10, 0,-40, 2, , S
+1106,11, 0,-40, 2, , S
+1106,12, 0,-40, 2, , S
+1106,13, 0,-40, 2, , S
+1106,14, 0,-40, 2, , S
+1106,15, 0,-40, 2, , S
+1106,16, 0,0, 2, , S
+1106,17, 0,0, 2, , S
+1106,18, 0,40, 2, , S
+1106,19, 0,40, 2, , S
+1106,20, 0,40, 2, , S
+1106,22, 0,40, 2, , S
+1106,23, 0,40, 2, , S
+1106,24, 0,40, 2, , S
+1106,25, 0,0, 2, , S
+1106,26, 0,0, 2, , S
+
+[Begin Action 3105]
+1106,10, 0,0, 2, , S, ,, 256
+1106,11, 0,0, 2, , S, ,, 256
+1106,12, 0,0, 2, , S, ,, 256
+1106,13, 0,0, 2, , S, 1.6,0.5, 300
+1106,14, 0,0, 2, , S, 1.7,0.5, 300
+1106,15, 0,0, 2, , S, ,, 300
+1106,18, 0,0, 2, , S, 2,0.4, 345
+1106,19, 0,0, 2, , S, 2,0.5, 345
+1106,20, 0,0, 2, , S, 2,, 345
+1106,22, 0,0, 2, , S, 2,0.2, 345
+1106,23, 0,0, 2, , S, 2,0.2, 345
+1106,24, 0,0, 2, , S
+1106,10, 0,0, 2, , S, ,, 256
+1106,11, 0,0, 2, , S, ,, 256
+1106,12, 0,0, 2, , S, ,, 256
+1106,13, 0,0, 2, , S, 2,0.2, 320
+1106,14, 0,0, 2, , S, 2,0.2, 320
+1106,15, 0,0, 2, , S, 2,, 320
+1106,18, 0,0, 2, , S, 2,0.1, 320
+1106,19, 0,0, 2, , S
+1106,20, 0,0, 2, , S
+1106,22, 0,0, 2, , S
+1106,23, 0,0, 2, , S
+1106,24, 0,0, 2, , S
+
+;---------------------------
+; Stand/Air Hit high (light)
+[Begin Action 5000]
+Clsn2: 2
+  Clsn2[0] = -18, -78, 25, 4
+  Clsn2[1] = -34, -118, 8, -67
+5000, 0,0,0, 4
+Clsn2: 2
+  Clsn2[0] = -19, -89, 24, 4
+  Clsn2[1] = -46, -114, -4, -63
+5000,10,0,0, 4
+
+;Stand/Air Hit high (medium)
+[Begin Action 5001]
+Clsn2: 2
+  Clsn2[0] = -18, -78, 25, 4
+  Clsn2[1] = -34, -118, 8, -67
+5000,0, 0,0, 5
+Clsn2: 2
+  Clsn2[0] = -19, -89, 24, 4
+  Clsn2[1] = -46, -114, -4, -63
+5000,10, 0,0, 5
+
+;Stand/Air Hit high (hard)
+[Begin Action 5002]
+Clsn2: 2
+  Clsn2[0] = -19, -89, 24, 4
+  Clsn2[1] = -62, -107, 15, -59
+5000,20, 0,0, 5
+Clsn2: 2
+  Clsn2[0] = -19, -89, 24, 4
+  Clsn2[1] = -71, -107, 12, -55
+5000,30, 0,0, 5
+
+;---------------------------
+;Stand Recover high (light)
+[Begin Action 5005]
+Clsn2: 2
+  Clsn2[0] = -19, -89, 24, 4
+  Clsn2[1] = -46, -114, -4, -63
+5000,10,0,0, 3
+Clsn2: 2
+  Clsn2[0] = -19, -89, 24, 4
+  Clsn2[1] = -34, -118, 8, -67
+5000, 0,0,0, -1
+
+;Stand Recover high (medium)
+[Begin Action 5006]
+Clsn2: 2
+  Clsn2[0] = -25, -79, 18, 4
+  Clsn2[1] = -61, -108, 15, -60
+5000,20,0,0, 3
+Clsn2: 2
+  Clsn2[0] = -19, -89, 24, 4
+  Clsn2[1] = -46, -114, -4, -63
+5000,10,0,0, 4
+Clsn2: 2
+  Clsn2[0] = -19, -89, 24, 4
+  Clsn2[1] = -34, -118, 8, -67
+5000, 0,0,0, -1
+
+;Stand Recover high (hard)
+[Begin Action 5007]
+Clsn2: 2
+  Clsn2[0] = -25, -79, 18, 4
+  Clsn2[1] = -61, -108, 15, -60
+5000,20,0,0, 3
+Clsn2: 2
+  Clsn2[0] = -31, -53, 20, 0
+  Clsn2[1] = -46, -73, -5, -37
+5000,10,0,0, 4
+Clsn2: 2
+  Clsn2[0] = -19, -89, 24, 4
+  Clsn2[1] = -34, -118, 8, -67
+5000, 0,0,0, -1
+
+;---------------------------
+;Stand/Air Hit low (light)
+[Begin Action 5010]
+Clsn2: 1
+  Clsn2[0] = -19, -116, 18, 4
+5010, 0,0,0, 5
+
+;Stand/Air Hit low (medium)
+[Begin Action 5011]
+Clsn2: 1
+  Clsn2[0] = -25, -106, 20, 4
+5010,10,0,0, 5
+Clsn2: 1
+  Clsn2[0] = -41, -99, 20, 1
+5010,20,0,0, 5
+
+;Stand/Air Hit low (hard)
+[Begin Action 5012]
+Clsn2: 1
+  Clsn2[0] = -41, -99, 20, 1
+5010,20, 0,0, 5
+Clsn2: 1
+  Clsn2[0] = -48, -91, 23, 1
+5010,30, 0,0, 5
+
+;---------------------------
+;Stand Recover low (light)
+[Begin Action 5015]
+Clsn2: 1
+  Clsn2[0] = -25, -106, 20, 4
+5010,10,0,0, 1
+Clsn2: 1
+  Clsn2[0] = -19, -116, 19, 4
+5010, 0,0,0, -1
+
+;Stand Recover low (medium)
+[Begin Action 5016]
+Clsn2: 1
+  Clsn2[0] = -41, -99, 20, 1
+5010,20,0,0, 1
+Clsn2: 1
+  Clsn2[0] = -25, -106, 20, 4
+5010,10,0,0, 4
+Clsn2: 1
+  Clsn2[0] = -19, -116, 19, 4
+5010, 0,0,0, -1
+
+;Stand Recover low (hard)
+[Begin Action 5017]
+Clsn2: 1
+  Clsn2[0] = -41, -99, 20, 1
+5010,20,0,0, 1
+Clsn2: 1
+  Clsn2[0] = -25, -106, 20, 4
+5010,10,0,0, -1
+
+;---------------------------
+;Crouch Hit (light)
+[Begin Action 5020]
+Clsn2Default: 1
+  Clsn2[0] = -30, -70, 18, 4
+5020, 0,0,0, 5
+5020,10,0,0, 5
+
+;Crouch Hit (medium)
+[Begin Action 5021]
+Clsn2Default: 1
+  Clsn2[0] = -33, -73, 27, 4
+5020,10,0,0, 5
+5020,20,0,0, 5
+
+;Crouch Hit (hard)
+[Begin Action 5022]
+Clsn2Default: 1
+  Clsn2[0] = -46, -75, 21, 4
+5020,20,0,0, 5
+5020,30, 0,0, 5
+
+;---------------------------
+;Crouch Recover (light)
+[Begin Action 5025]
+Clsn2Default: 1
+  Clsn2[0] = -30, -70, 18, 4
+5020,10,0,0, 1
+5020, 0,0,0, -1
+
+;Crouch Recover (medium)
+[Begin Action 5026]
+Clsn2Default: 1
+  Clsn2[0] = -33, -73, 27, 4
+5020,20,0,0, 3
+5020,10,0,0, 5
+5020, 0,0,0, -1
+
+;Crouch Recover (hard)
+[Begin Action 5027]
+Clsn2Default: 1
+  Clsn2[0] = -46, -75, 21, 4
+5020,20,0,0, 4
+5020,10,0,0, 4
+5020, 0,0,0, -1
+
+;---------------------------
+;Stand/Air Hit back
+[Begin Action 5030]
+Clsn2: 2
+  Clsn2[0] = -43, -98, 1, -45
+  Clsn2[1] = -12, -66, 52, -11
+5030, 0,0,0, 5
+
+;Stand/Air Hit transition
+[Begin Action 5035]
+Clsn2: 2
+  Clsn2[0] = -43, -98, 1, -45
+  Clsn2[1] = -12, -66, 52, -11
+5030, 0,0,0, 4
+LoopStart
+Clsn2: 2
+  Clsn2[0] = -47, -109, -3, -56
+  Clsn2[1] = -12, -70, 52, -15
+5030,10,0,0, 7
+
+;---------------------------
+;Air Recover
+[Begin Action 5040]
+5045,0, 0,0, 4
+5045,1, 0,0, 4
+5045,2, 0,0, 4
+LoopStart
+Clsn2Default: 1
+  Clsn2[0] = -24, -94, 21, -8
+5045,3, 0,0, 5
+
+;---------------------------
+;Air Fall (going up)
+[Begin Action 5050]
+Clsn2: 2
+  Clsn2[0] = -47, -61, 21, -21
+  Clsn2[1] = -8, -105, 57, -44
+5030,30,0,0, 5
+
+;---------------------------
+;Air Fall (up-type, going up)
+[Begin Action 5051]
+Clsn2: 1
+  Clsn2[0] = -14, -130, 18, -5
+5060, 0,0,0, 3
+
+;---------------------------
+;Air Fall (up-type, coming down)
+[Begin Action 5061]
+Clsn2: 2
+  Clsn2[0] = -43, -99, 2, -47
+  Clsn2[1] = -12, -68, 46, -22
+5030, 0,0,0, 5
+Clsn2: 2
+  Clsn2[0] = -46, -109, -1, -57
+  Clsn2[1] = -12, -68, 46, -22
+5030,10,0,0, 5
+Clsn2: 2
+  Clsn2[0] = -48, -62, 20, -21
+  Clsn2[1] = -16, -99, 49, -47
+5030,30,0,0, 5
+Clsn2: 2
+  Clsn2[0] = -48, -62, 20, -21
+  Clsn2[1] = -16, -99, 49, -47
+5030,40,0,0, 5
+Clsn2: 2
+  Clsn2[0] = -37, -72, -4, -7
+  Clsn2[1] = -5, -89, 60, -53
+5030,50,0,0, 5
+Clsn2: 1
+  Clsn2[0] = -20, -132, 13, -8
+5060,10,0,0, -1
+
+;---------------------------
+;Tripped
+[Begin Action 5070]
+Clsn2: 1
+  Clsn2[0] = -23, -106, 19, 3
+5010,10, 0,0, 5
+Clsn2: 2
+  Clsn2[0] = -44, -99, 3, -46
+  Clsn2[1] = -14, -66, 48, -16
+5030,0, 0,0, 5
+Clsn2: 2
+  Clsn2[0] = -47, -109, 0, -56
+  Clsn2[1] = -13, -68, 49, -18
+5030,10, 0,0, -1
+
+;---------------------------
+;Powerbreak
+[Begin Action 5075]
+Clsn2: 1
+  Clsn2[0] = -28, -88, 28, -25
+5030,0, 0,0, 10
+Clsn2: 1
+  Clsn2[0] = -28, -88, 28, -25
+5030,10, 0,0, 10
+Clsn2: 1
+  Clsn2[0] = -34, -84, 33, -27
+5030,20, 0,0, 10
+Clsn2: 1
+  Clsn2[0] = -33, -85, 30, -19
+5030,50, 0,0, -1
+
+;---------------------------
+;spin
+[Begin Action 5077]
+Clsn2: 1
+  Clsn2[0] = -32, -107, 32, -29
+Clsn2Default: 2
+  Clsn2[0] = -26, -113, 10, -9
+  Clsn2[1] = -28, -108, 18, -14
+Interpolate Angle
+5061,0, 0,-76, 19
+Interpolate Angle
+Clsn2: 1
+  Clsn2[0] = -32, -107, 32, -29
+5061,0, 0,-76, 1, , , 1,1, 360
+
+;---------------------------
+;LieDown Hit (stay down)
+[Begin Action 5080]
+Clsn2Default: 1
+  Clsn2[0] = -23, -13, 21, 2
+5040,20,0,0, 4
+5040, 0,0,0, 4
+5040,10,0,0, -1
+
+;---------------------------
+;LieDown Hit (hit up into air)
+[Begin Action 5090]
+Clsn2: 2
+  Clsn2[0] = -11, -73, 40, -20
+  Clsn2[1] = -46, -109, 7, -58
+5030,10,0,0, 7
+
+;---------------------------
+; Hit ground from fall
+[Begin Action 5100]
+Clsn2Default: 1
+  Clsn2[0] = -23, -13, 21, 2
+5040, 0,0,0, 3
+
+; Bounce into air
+[Begin Action 5160]
+Clsn2: 1
+  Clsn2[0] = -25, -35, 19, -20
+5040,0, 0,-19, -1
+
+; Hit ground from bounce
+[Begin Action 5170]
+Clsn2Default: 1
+  Clsn2[0] = -23, -13, 21, 2
+5040, 0,0,0, 3
+
+;---------------------------
+; Hit ground from fall (up-type)
+[Begin Action 5101]
+Clsn2Default: 1
+  Clsn2[0] = -23, -13, 21, 2
+5040,0,0,0, 2
+
+;---------------------------
+; LieDown
+[Begin Action 5110]
+Clsn2Default: 1
+  Clsn2[0] = -23, -13, 21, 2
+5040,10,0,0, 1
+
+; Get up from LieDown
+[Begin Action 5120]
+Clsn2Default: 1
+  Clsn2[0] = -13, -30, 14, 0
+5120,0, 0,0, 3
+5120,1, 0,0, 3
+10,0, 0,0, 3
+
+;LieDead animation
+[Begin Action 5150]
+5040,10,0,0, 1
+
+;---------------------------
+; Fall-recovery near ground
+[Begin Action 5200]
+-1,0, 0,0, 1
+
+;Fall-recovery in mid-air
+[Begin Action 5210]
+-1,0, 0,0, 1
+
+;---------------------------
+; Dizzy
+[Begin Action 5300]
+Clsn2Default: 1
+  Clsn2[0] = -18, -76, 40, 3
+1300,0, 0,0, 4
+LoopStart
+1300,1, 0,0, 8
+1300,2, 0,0, 10
+1300,3, 0,0, 8
+1300,2, 0,0, 10
+
+;---------------------------
+; BLANK ANIM
+[Begin Action 1]
+-1,-1, 0,0, -1
+
+; blank hitbox
+[Begin Action 4]
+Clsn1: 1
+  Clsn1[0] = -25, -25, 25, 25
+-1,-1, 0,0, -1
+

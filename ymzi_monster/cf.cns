@@ -1,0 +1,520 @@
+; commands freeeeeeeeeeeeeeeeeeeeeeeeeeeeedooooooooooooooooooooooooooooooooooooooooooooom
+
+;-------------------------
+[statedef 1020]
+type = S
+movetype = A
+physics = S
+juggle = 0
+ctrl = 0
+velset = 0,0                         
+anim = 1020
+
+[State 200, 2]
+type = PlaySnd
+trigger1 = animelem=2
+value = s45, 0
+
+[state vel]
+type = velset
+trigger1 = animelemtime(2) = 0
+x = 2.350988702*6
+
+[state vel]
+trigger1 = time > 20
+type = VelMul
+x = 0.8
+
+[State 0, HitDef]
+type = HitDef
+trigger1 = animelem = 2
+attr = S,SA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+hitflag = MAF        ;HLAFD+-
+guardflag = MA         ;HLA
+animtype = hard          ;Light, Medium, Hard, Back, Up, DiagUp
+;fall.animtype = Back
+priority = 3,Hit
+damage = ceil(1.5*ceil(cond(var(7)>1,(66.96428571428571*(fvar(13))*fvar(0)),66.96428571428571*fvar(0)))),0
+pausetime = 6,8
+;guard.pausetime = 0,0
+sparkno = s8200+(random%7)
+guard.sparkno = s8100
+sparkxy = -15,-60
+hitsound = S8001,3
+guardsound = S8002,0
+ground.type = high      ;Low, Trip, None
+;air.type = High
+ground.slidetime = 13
+;guard.slidetime = 
+ground.hittime = 13
+;guard.hittime = 
+air.hittime = 20
+;guard.ctrltime = 
+;guard.dist = 320
+;yaccel = 1.500022888532845/2.5
+ground.velocity = -0.800000191*5,-2.400000095*2
+;guard.velocity = 0
+air.velocity = -0.800000191*3,-2.400000095
+ground.cornerpush.veloff = 0
+fall = 1
+getpower = 0
+p2stateno = cond(var(18)=1,5022,cond(var(18)=2,5021,cond(enemy,statetype = S,5002,5010)))
+ID = 8
+
+[State 0, Explod]
+type = Explod
+triggerall = var(2) = 2
+triggerall = var(3) = 1
+triggerall = numexplod(8005) != 1
+trigger1 = movehit
+anim = 8005
+ID = 8005
+pos = -15,-60
+postype = P2  ;P2, Front, Back, Left, Right
+removetime = -2
+supermovetime = 0
+pausemovetime = 0
+scale = .5,.5
+sprpriority = 0
+persistent = 0
+bindtime = -1
+ignorehitpause = 1
+
+[State air punish]
+type = Helper
+triggerall = numhelper(901) != 1
+trigger1 = p2stateno = 5022
+name = "hit in air"
+ID = 901
+stateno = 901
+pos = 0,-70
+postype = P2    ;P2, Front, Back, Left, Right
+facing = 1
+keyctrl = 0
+ownpal = 1
+ignorehitpause = 1
+
+[State 0, Explod]
+type = Explod
+triggerall = numexplod(8101) != 1
+trigger1 = moveguarded
+anim = 8101
+ID = 8101
+pos = 0,-70
+postype = P2  ;P2, Front, Back, Left, Right
+removetime = -2
+supermovetime = 0
+pausemovetime = 0
+scale = 1,1
+ontop = 1
+persistent = 0
+bindtime = -1
+ignorehitpause = 1
+
+[State blood]
+type = Helper
+triggerall = numhelper(900) != 1
+trigger1 = MoveContact
+name = "blood"
+ID = 900
+stateno = 900
+pos = 0,-70
+postype = P2    ;P2, Front, Back, Left, Right
+facing = 1
+keyctrl = 0
+ownpal = 1
+ignorehitpause = 1
+
+[state combo check]
+type = varadd
+trigger1 = movehit
+v = 7
+value = 1
+IgnoreHitPause = 1
+persistent = 0
+
+;hit count for second powerbreak
+[State count]
+type = Varadd
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+triggerall = var(31) = 1
+trigger1 = var(26) != 0 && movehit
+trigger1 = var(33) < 2
+v = 33
+value = 1
+IgnoreHitPause = 1
+persistent = 0
+
+[State second powerbreak]
+type = TargetState
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+triggerall = var(31) = 1
+trigger1 = var(33) = 2 && var(35) = 0
+value = 5076
+
+[State recovery]
+type= statetypeset
+trigger1= animelemtime(3)>=0
+movetype= I
+
+[State 1000, 3]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+[statedef 1120]
+type = S
+movetype = A
+physics = S
+juggle = 0
+ctrl = 0     
+velset = 0,0                     
+anim = 1105
+
+[State 1100, 3]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1121
+ctrl = 1
+
+[statedef 1121]
+type = S
+movetype = A
+physics = S
+juggle = 0
+ctrl = 0     
+velset = 0,0                     
+anim = 1100
+
+[State idle]
+type = stateTypeSet
+trigger1 = time = 10 && var(3)=1
+movetype = I
+
+[State ctrl]
+type = ctrlSet
+trigger1 = time = 10 && var(3)=1
+value = 1
+
+[State 0, Explod]
+type = Explod
+trigger1 = animelem=5
+anim = 1102
+ID = 1102
+pos = 0,0
+postype = P1  ;P2, Front, Back, Left, Right
+bindtime = 1
+removetime = -2
+scale = 1,1
+sprpriority = 2
+removeongethit = 1
+
+[State snd]
+type = PlaySnd
+trigger1 = animelem = 4
+value = s1120, 0
+
+[State 1100, 3]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = cond(var(3)=1,1105,1106)
+ctrl = 0
+
+[statedef 1153]
+movetype = I
+physics = N
+ctrl = 0
+anim = 1153
+sprpriority = 7
+
+[state vel]
+type = velset
+trigger1 = animelemtime(1) = 0
+x = 6
+
+[State 200, 2]
+type = PlaySnd
+trigger1 = animelem=2
+value = s1000, 7
+
+[State pass thru]
+type = VarSet
+trigger1 = animelemtime(1) = 0
+v = 1    ;fv = 10
+value = 1
+
+[State pass thru]
+type = VarSet
+trigger1 = animelemtime(8) = 0
+v = 1    ;fv = 10
+value = 0
+
+[state destroyself]
+type = destroyself
+trigger1 = animtime = 0
+
+;-------------------------
+;sadomaso
+[statedef 1220]
+type = S
+movetype = A
+physics = S
+juggle = 0
+ctrl = 0 
+velset = 0,0                         
+anim = 1200
+
+[State reversal]
+type = ReversalDef
+trigger1 = 1
+reversal.attr = SCA,NA,SA           ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+pausetime = 0,0
+sparkno = -1
+;hitsound = S8001,5
+p1stateno = 1205
+ignorehitpause = 1
+
+[State 200, 2]
+type = PlaySnd
+trigger1 = animelem = 3
+channel = 0
+value = s1200, 0
+
+[State 1300, 3]
+type = ChangeState
+triggerall = time > 3
+trigger1 = command = "left"
+value = 1225
+ctrl = 0
+
+[State 1300, 3]
+type = ChangeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+; Hop backwards
+[Statedef 1225]
+type    = A
+physics = N
+ctrl = 0
+anim = 105
+sprpriority = 1
+
+[STATe sound]
+type = playsnd
+trigger1 = time = 1
+value = s105,0
+
+[State 0, Gravity]
+type = Gravity
+trigger1 = 1
+
+[state afterimage I]
+type = AfterImage
+trigger1 = stateno = 1225
+time = 30
+length = 5
+palcolor = 256
+palbright = 0,0,60
+palcontrast = 120,120,256
+palpostbright = 0,0,0
+paladd = 5,5,5
+;palmul = 0,0,0
+timegap = 1
+framegap = 1
+trans = add ;None, Add1, Sub
+ignorehitpause = 1
+persistent = 0
+
+[state blu left]
+type = explod
+trigger1 = Time = 1
+;anim = F(60 + (sysvar(1) > Const720p(20)) + (sysvar(1) > Const720p(56)))
+anim = 7000
+postype = none
+pos = pos x + camerapos x, 0
+scale = .5,.5
+facing = 1
+sprpriority = ifelse (sysvar(1) <= Const720p(56), -10, 10)
+[state blu right]
+type = explod
+trigger1 = Time = 1
+;anim = F(60 + (sysvar(1) > Const720p(20)) + (sysvar(1) > Const720p(56)))
+anim = 7000
+postype = none
+pos = pos x + camerapos x, 0
+scale = .5,.5
+facing = -1
+sprpriority = ifelse (sysvar(1) <= Const720p(56), -10, 10)
+
+[State 105, 1]
+type = VelSet
+trigger1 = Time = 0
+x = const(velocity.run.back.x)
+y = const(velocity.run.back.y)
+
+[State 105, 3]
+type = ChangeState
+trigger1 = Vel Y > 0
+trigger1 = Pos Y >= 0
+value = 1226
+
+;---------------------------------------------------------------------------
+; Hop backwards (land)
+[Statedef 1226]
+type    = S
+physics = S
+ctrl = 0
+anim = 47
+
+[STATe sound]
+type = playsnd
+trigger1 = time = 0
+value = s105,1
+
+[State 106, 1]
+type = VelSet
+trigger1 = Time = 0
+y = 0
+
+[State 106, 2]
+type = PosSet
+trigger1 = Time = 0
+y = 0
+
+[State 106, 4]
+type = VelSet
+trigger1 = abs(vel x) < Const(movement.stand.friction.threshold)
+x = 0
+
+[State 106, 5]
+type = ChangeState
+trigger1 = Time = 7
+value = 1205
+ctrl = 1
+
+[statedef 1320]
+type = S
+movetype = A
+physics = S
+juggle = 0
+ctrl = 0    
+velset = 0,0                      
+anim = 1320
+
+[State ko container]
+type = Helper
+triggerall = numhelper(1302) = 0
+trigger1 = animelem = 11
+name = "ko container"
+ID = 1302
+stateno = 1302
+pos = 0,0
+postype = left    ;P2, Front, Back, Left, Right
+facing = facing
+keyctrl = 0
+ownpal = 1
+ignorehitpause = 1
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 1
+value = S1300,0
+
+[State bind]
+type = targetbind
+trigger1 = Time = 1
+pos = 99,-88
+
+[State bind]
+type = targetbind
+trigger1 = Time = 3
+pos = 71,-76
+
+[State bind]
+type = targetbind
+trigger1 = Time = 8
+pos = 52,-127
+
+[State bind]
+type = targetbind
+trigger1 = Time = 12
+pos = 49,-128
+
+[State bind]
+type = targetbind
+trigger1 = Time = 16
+pos = 49,-99
+
+[State bind]
+type = targetbind
+trigger1 = Time = 21
+pos = 47,-100
+
+[State bind]
+type = targetbind
+trigger1 = Time = 28
+pos = 40,-101
+
+[State bind]
+type = targetbind
+trigger1 = Time = 38
+pos = 40,-104
+
+[State bind]
+type = targetbind
+trigger1 = Time = 50
+pos = 49,-99
+
+[state combo check]
+type = varadd
+trigger1 = AnimElem = 11
+v = 7
+value = 1
+IgnoreHitPause = 1
+persistent = 0
+
+[State 815]
+type = TargetLifeAdd
+trigger1 = AnimElem = 11
+value = ceil((cond(var(7)>1,(-100.4464285714286*(fvar(13))*fvar(0)),-100.4464285714286*fvar(0)))*cond(var(18)=1,1.5,1))
+
+[State 1300, 3]
+type = ChangeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+[statedef 1321]
+type = S
+movetype = H
+physics = N
+juggle = 0
+ctrl = 0    
+velset = 0,0                      
+anim = 0
+
+[State ChangeAnim2]
+type = ChangeAnim2
+trigger1 = time = 1
+value = 1325
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = time = 51
+y = 0
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = time = 51
+x = -0.800000191
+
+[State 5071, 3] ;Hit ground
+trigger1 = time = 95
+type = selfState
+value = 5001

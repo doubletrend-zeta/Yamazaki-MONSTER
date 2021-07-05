@@ -1,0 +1,1960 @@
+;
+; TABLE OF CONTENTS
+;_________________________________
+; !!use this to find the secrets!!
+;---------------------------------
+; -2
+; debug display
+; Training mode check
+; config check
+; varsets
+;	set shift
+;	set timer
+;	shift active
+;	bar total
+;	cap bar total
+;	cap bar bottom
+;	drain bar
+;	refractory period
+;	regen bar
+;	super move refill
+;	var(4) reverse anim correct check
+;	set level 0
+;	damage display variables
+;	proration variables
+;	set unique hit count
+;	bash combo count number
+;	distance between two points at any given time
+;	p2 dist x
+; shift select
+; bar
+; shift end
+; shift damage
+; damage display
+; proration formula
+; percent check
+; warning
+; heartbeat flag
+; p2 air determination
+; counter hit determination
+; point determination
+; enemy combo correction
+; point display
+; counter to activate second powerbreak
+; track hits since powerbreak
+; powerbreak shell
+; guard break check
+; ko container
+; hitsound rando
+; winner
+; running?
+; throw confirm
+; wall check
+; ------- Command buffering system by Vans --------
+; confirm stateno normals for DC
+; c. abc
+; hit by shift alone fix
+; -3
+; landing sound
+; cornerpush
+; Prevent Undergound Juggles (POTS)
+; shift velocity
+; self state
+; ctrlset
+; sounds
+;
+;_________________________________
+
+; -2
+
+[statedef -2]
+
+;======================================
+; debug display
+;======================================
+;[state display setup]
+;type = displaytoclipboard
+;trigger1 = roundstate < 2
+;text="prematch check \n shift set?=%d, timer=%d, shift=%d, %d, %d"
+;params = var(0),var(1),var(2),gametime, palno
+
+[state display shift]
+type = displaytoclipboard
+trigger1 = roundstate >= 0
+;trigger1 = var(3) = 1
+text="shift check \n shift on?=%d, bar percent=%d, shift damage boost=%f, %d"
+params = var(3),var(4),fvar(0),var(39)
+ignorehitpause = 1
+
+;[state display damage]
+;type = displaytoclipboard
+;triggerall = roundstate = 2
+;trigger1 = var(3) != 1
+;trigger1 = var(7) >= 0
+;text="damage check \n enemy life=%d, damage display=%d, combo correction=%d, displayinfo=%f, percent display=%d"
+;params =var(5),var(6),var(7),fvar(1),var(8)
+
+;[state display damage]
+;type = appendtoclipboard
+;triggerall = roundstate = 2
+;trigger1 = var(3) != 1
+;trigger1 = var(7) >=0
+;text=" total damage =%d, fade number=%d,proration=%f, %d"
+;params = var(12),var(13), fvar(13), var(9)
+
+;[state display proration]
+;type = displaytoclipboard
+;triggerall = roundstate = 2
+;trigger1 = var(3) = 1
+;trigger1 = var(7) > 1
+;text="proration check \n character=%f 2=%f 3=%f 4=%f 5=%f 6=%f"
+;params = fvar(2),fvar(3),fvar(4),fvar(5),fvar(6),fvar(7)
+
+;[state display proration]
+;type = appendtoclipboard
+;triggerall = roundstate = 2
+;trigger1 = var(3) != 1
+;trigger1 = var(7) > 1
+;text="7=%f 8=%f 9=%f 10=%f 11=%f proration=%f"
+;params = fvar(8),fvar(9),fvar(10),fvar(11),fvar(12),fvar(13)
+
+;[state super info]
+;type = displaytoclipboard
+;triggerall = roundstate = 2
+;trigger1 = stateno = [2000,2998]
+;trigger1 = var(7) < 1
+;text="bash check \n power level=%d, current bash=%d, monster blow=%f"
+;params =var(10),var(11),fvar(14)
+
+;[state display point & powerbreak]
+;type = displaytoclipboard
+;triggerall = roundstate = 2
+;trigger1 = var(3) != 1
+;trigger1 = var(26) = 0
+;text="point check \n override?=%d, counter hit p1=%d,p2=%d, p1 point=%d, enemy combo=%d,p2 point=%d"
+;params =var(22),var(19),var(24),var(20),var(23),var(21)
+
+;[state display damage]
+;type = appendtoclipboard
+;triggerall = roundstate = 2
+;trigger1 = var(3) != 1
+;trigger1 = var(26) = 0
+;text="powerbreak decision=%d, flag %d, saved: %d %d, correction: %d %d"
+;params = var(25),var(26),var(27),var(28),var(29),var(30)
+
+;[state display point & powerbreak]
+;type = displaytoclipboard
+;triggerall = roundstate = 2
+;trigger1 = var(3) != 1
+;trigger1 = var(26) != 0
+;text="state check \n counter=%f, second powerbreak check =%d, flag %d, confirm = %d,second... = %d,prevent loop %d"
+;params =fvar(17),var(33),var(26),var(32),var(34),var(35)
+
+;[state guardbreak check]
+;type = displaytoclipboard
+;triggerall = roundstate = 2
+;trigger1 = var(3) != 1
+;text="guard break check %d, x %f, y %f"
+;params = var(36),fvar(22),fvar(23)
+
+;[state vel check]
+;type = displaytoclipboard
+;trigger1 = roundstate = 2
+;trigger1 = var(3) != 1
+;text="slide flag %d, vel x %f"
+;params = var(38), vel x
+
+;[state round check]
+;type = displaytoclipboard
+;trigger1 = roundstate > 2
+;trigger1 = var(3) != 1
+;text="roundstate %d"
+;params = roundstate
+
+;[state pos check]
+;type = displaytoclipboard
+;trigger1 = roundstate > 0
+;text="%d, %d, %f, %f, %f, %f"
+;params = pos x, pos y, vel x, vel y, fvar(26), fvar(27)
+
+;======================================
+; Training mode check
+;======================================
+[State set training]
+type = VarSet
+trigger1 = roundstate < 2 && roundsexisted <= 0
+trigger1 = power = 3000
+v = 58
+value = 1
+
+[State no training mid fight]
+type = VarSet
+trigger1 = roundstate = 2 && roundsexisted <= 0
+trigger1 = power < 3000
+v = 58
+value = 0
+
+[state prevent power gain]
+type = powerset
+trigger1 = roundstate = 2
+trigger1 = var(58) = 0
+trigger2 = roundstate < 2  && roundsexisted >= 1
+trigger2 = var(58) = 0
+value = 0
+
+[state level]
+type = varset
+triggerall = roundstate < 2
+triggerall = roundsexisted <= 0
+trigger1 = var(58) = 1
+v = 4
+value = 100
+
+[state level]
+type = varset
+triggerall = roundstate < 2
+triggerall = roundsexisted <= 0
+trigger1 = var(58) = 1
+v = 10
+value = 3
+
+[State training container]
+type = Helper
+triggerall = numhelper(999999) = 0
+trigger1 = var(58) = 1
+name = "training container"
+ID = 999999
+stateno = 999999
+pos = 0,0
+postype = P1    ;P2, Front, Back, Left, Right
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+[State remove afterimage]
+type = AfterImageTime
+triggerall = var(58) = 1
+triggerall = var(3) != 0
+trigger1 = command = "x" || command = "y" || command = "x+y"
+time = 1
+ignorehitpause = 1
+
+;======================================
+; config check
+;======================================
+[state create config]
+type = Helper
+triggerall = numhelper(1000000) = 0
+trigger1 = 1
+name = "config boy"
+ID = 1000000
+stateno = 1000000
+pos = 0,0
+postype = P1    ;P2, Front, Back, Left, Right
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+;======================================
+; variable helper check
+;======================================
+[state create variable helper]
+type = Helper
+triggerall = numhelper(985484) = 0
+trigger1 = 1
+name = "variable boy"
+ID = 985484
+stateno = 985484
+pos = 0,0
+postype = P1    ;P2, Front, Back, Left, Right
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+;======================================
+; varsets
+;======================================
+;	set shift
+[state set shift as off]
+type = varset
+triggerall = roundstate = 0
+triggerall = roundsexisted <= 0
+trigger1 = 1
+v = 0
+value = 0
+
+[state set shift as off]
+type = varset
+triggerall = roundstate > 1
+triggerall = var(0) != 1
+trigger1 = 1
+v = 0
+value = 1
+
+;	set timer
+[state set shift confirmation timer]
+type = varset
+triggerall = roundstate = 0
+triggerall = roundsexisted <= 0
+trigger1 = var(0) = 0
+v = 1
+value = 9
+
+[state set shift confirmation timer]
+type = varadd
+triggerall = roundstate < 2
+triggerall = roundsexisted <= 0
+trigger1 = (GameTime%60) = 0
+v = 1
+value = -1
+persistent = 1
+
+[state set shift confirmation timer]
+type = varset
+triggerall = roundstate < 2
+triggerall = roundsexisted <= 0
+trigger1 = var(0) = 1
+v = 1
+value = 0
+
+;-------------------------------------------
+;	shift active
+[state set shift as need to fill]
+type = varset
+triggerall = roundstate = 0
+triggerall = roundsexisted <= 0
+trigger1 = time = 1
+v = 3
+value = 2
+
+;[state set shift as need to fill round 2 etc.]
+;type = varset
+;triggerall = roundstate = 0
+;triggerall = roundsexisted >= 1
+;trigger1 = var(3) = 1 || var(3) = 4
+;trigger1 = time = 1
+;v = 3
+;value = 2
+
+[state set full]
+type = varset
+trigger1 = var(4) = 100
+trigger1 = stateno != 230
+trigger1 = stateno != [3999,4999]
+v = 3
+value = 0
+
+;	bar total
+[state level]
+type = varset
+triggerall = roundstate = 0
+triggerall = roundsexisted <= 0
+trigger1 = time = 1
+v = 4
+value = 0
+
+;[state level round 2 etc]
+;type = varset
+;triggerall = roundstate = 0
+;triggerall = roundsexisted >= 1
+;triggerall = var(3) != 0
+;trigger1 = time = 1
+;v = 4
+;value = 0
+
+;	cap bar total
+[state level]
+type = varset
+trigger1 = var(4) > 100
+;trigger2 = roundstate = 0
+;trigger2 = roundsexisted >= 1
+;trigger2 = var(3) = 2 && time < 1 
+v = 4
+value = 100
+
+;	cap bar bottom
+[state level]
+type = varset
+trigger1 = var(4) < 0
+;trigger2 = roundstate = 0
+;trigger2 = roundsexisted >= 1
+;trigger2 = var(3) = 2 && time < 1 
+v = 4
+value = 0
+
+;	drain bar
+[state level]
+type = varadd 
+triggerall = var(3) = 1 || var(3) = 4
+trigger1 = (GameTime%6) = 0
+v = 4
+value = -1
+persistent = 1
+ignorehitpause = 1
+
+;	refractory period
+[state level]
+type = varset
+triggerall = roundstate >= 2
+trigger1 = var(4) = 0
+v = 3
+value = 2
+
+;	regen bar
+[state level]
+type = varadd
+triggerall = var(3) = 2
+triggerall = var(4) < 100
+trigger1 = roundstate >= 2
+trigger1 = (GameTime%6) = 0
+trigger2 = roundstate < 2
+trigger2 = roundsexisted >= 1
+trigger2 = (GameTime%6) = 0
+v = 4
+value = 1
+persistent = 1
+ignorehitpause = 1
+
+;	super move refill
+[state level]
+type = varset
+triggerall = roundstate = 2
+triggerall = var(3) = 1
+triggerall = var(3) != 2
+trigger1 = stateno = 2000 || stateno = 2100 || stateno = 2200 || stateno = 2500
+trigger1 = time = 1
+v = 4
+value = 99
+ignorehitpause = 1
+
+;	var(4) reverse anim correct check
+[state check]
+type = varset
+trigger1 = var(4) = 100 
+v = 39
+value = 0
+ignorehitpause = 1
+persistent = 1
+
+;	var(4) reverse anim correct check for supers
+[state check]
+type = varset
+triggerall = roundstate = 2
+triggerall = var(3) = 1
+triggerall = var(3) != 2
+trigger1 = stateno = 2000 || stateno = 2100 || stateno = 2200 || stateno = 2500
+trigger1 = time = 1
+v = 39
+value = 1
+ignorehitpause = 1
+persistent = 1
+
+[state check]
+type = varadd
+trigger1 = var(4) < 100 && var(4) > 0
+trigger1 = (GameTime%6) = 0
+v = 39
+value = 1
+ignorehitpause = 1
+persistent = 1
+
+;---------------------------
+;	set level 0
+[state level]
+type = varset
+triggerall = roundstate = 0
+triggerall = roundsexisted <= 0
+trigger1 = time = 0
+v = 10
+value = 0
+
+;---------------------------
+;	damage display variables
+[state combo set]
+type = varset
+trigger1 = roundstate < 2
+v = 7
+value = 0
+ignorehitpause = 1
+
+[state combo reset]
+type = varset
+triggerall = var(7) > 0
+trigger1 = stateno = 0 || (stateno = 100 && var(42)=0) || (stateno = 105 && var(42)=0) || stateno = 20 || stateno = 11
+trigger1 = time = 5
+v = 7
+value = 0
+ignorehitpause = 1
+
+[State -2]
+Type = VarSet
+Trigger1 = P2MoveType != H
+trigger1 = var(7) = 0
+Trigger2 = P2StateNo = [120,159]
+Trigger3 = P2StateNo = [5200,5201]
+V = 5
+Value = P2Life
+IgnoreHitPause = 1
+
+[State -2]
+Type = VarSet
+Trigger1 = P2MoveType != H
+Trigger2 = P2StateNo = [120,159]
+Trigger3 = P2StateNo = [5200,5201]
+Trigger4 = Var(7) < 0
+FV = 1
+Value = 100
+IgnoreHitPause = 1
+
+[State -2]
+Type = VarAdd
+Trigger1 = Ceil(FVar(1))%10 > 0
+FV = 1
+Value = -1
+IgnoreHitPause = 1
+
+[State -2]
+Type = VarAdd
+TriggerAll = P2MoveType = H
+TriggerAll = P2StateNo != [120,159]
+TriggerAll = P2StateNo != [5200,5201]
+Trigger1 = Var(5) > P2Life
+Trigger1 = Ceil(FVar(1))/10 > 0
+Trigger1 = Var(7) > 0
+FV = 1
+Value = -10
+IgnoreHitPause = 1
+
+[State -2]
+Type = VarSet
+TriggerAll = P2MoveType = H
+TriggerAll = P2StateNo != [120,159]
+TriggerAll = P2StateNo != [5200,5201]
+Trigger1 = Var(5) > P2Life
+Trigger1 = Var(5) - P2Life != Var(6)
+Trigger1 = Var(7) > 0
+FV = 1
+Value = Floor(FVar(1)/10)*10+6
+IgnoreHitPause = 1
+
+[State -2]
+Type = VarSet
+;TriggerAll = P2MoveType = H
+TriggerAll = P2StateNo != [120,159]
+TriggerAll = P2StateNo != [5200,5201]
+Trigger1 = Var(5) > P2Life
+Trigger1 = Var(7) > 0
+V = 6
+Value = Var(5) - P2Life
+IgnoreHitPause = 1
+
+[State -2]
+Type = VarSet
+;Trigger1 = P2MoveType != H
+trigger1 = var(7) = 0
+Trigger2 = P2StateNo = [120,159]
+Trigger3 = P2StateNo = [5200,5201]
+V = 6
+Value = 0
+IgnoreHitPause = 1
+
+[state total @ 0]
+type = varset
+trigger1 = var(7) = 0
+v = 12
+value = 0
+ignorehitpause = 1
+
+[state total add]
+type = varset
+TriggerAll = P2MoveType = H
+trigger1 = var(7) > 0
+trigger1 = Ceil(FVar(1))%10=1
+trigger2 = fvar(14) > 0 
+v = 12
+value = var(6)
+ignorehitpause = 1
+
+[state save total for fade]
+type = varadd
+triggerall = movetype != A
+triggerall = var(13) = 0
+trigger1 = stateno = 0 || stateno = 11 || stateno = 20
+trigger1 = time = 1
+v = 13
+value = var(12)
+ignorehitpause = 1
+
+[state remove fade total]
+type = varset
+triggerall = movetype = A
+trigger1 = time = 1
+v = 13
+value = 0
+ignorehitpause = 1
+
+;---------------------------
+;	proration variables
+[state create proration helper]
+type = Helper
+triggerall = numhelper(8757) = 0
+triggerall = roundstate = 2
+trigger1 = var(7) > 0
+name = "proration helper"
+ID = 8757
+stateno = 8757
+pos = 0,0
+postype = P1    ;P2, Front, Back, Left, Right
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+[state percent display reset]
+type = varset
+triggerall = var(7) = 0
+trigger1 = movetype = A
+trigger1 = time = 1
+trigger2 = var(40) = 0
+trigger2 = time = 1
+v = 8
+value = 100
+ignorehitpause = 1
+
+[state 1]
+type = varset
+trigger1 = var(7) = 1
+fv = 3
+value = cond(var(7) > 0,(var(8)*.0100),1)
+ignorehitpause = 1
+
+[state 2]
+type = varset
+trigger1 = var(7) = 2
+fv = 4
+value = cond(var(7) > 0,(var(8)*.0100),1)
+ignorehitpause = 1
+
+[state 3]
+type = varset
+trigger1 = var(7) = 3
+fv = 5
+value = cond(var(7) > 0,(var(8)*.0100),1)
+ignorehitpause = 1
+
+[state 4]
+type = varset
+trigger1 = var(7) = 4
+fv = 6
+value = cond(var(7) > 0,(var(8)*.0100),1)
+ignorehitpause = 1
+
+[state 5]
+type = varset
+trigger1 = var(7) = 5
+fv = 7
+value = cond(var(7) > 0,(var(8)*.0100),1)
+ignorehitpause = 1
+
+[state 6]
+type = varset
+trigger1 = var(7) = 6
+fv = 8
+value = cond(var(7) > 0,(var(8)*.0100),1)
+ignorehitpause = 1
+
+[state 7]
+type = varset
+trigger1 = var(7) = 7
+fv = 9
+value = cond(var(7) > 0,(var(8)*.0100),1)
+ignorehitpause = 1
+
+[state 8]
+type = varset
+trigger1 = var(7) = 8
+fv = 10
+value = cond(var(7) > 0,(var(8)*.0100),1)
+ignorehitpause = 1
+
+[state 9]
+type = varset
+trigger1 = var(7) = 9
+fv = 11
+value = cond(var(7) > 0,(var(8)*.0100),1)
+ignorehitpause = 1
+
+[state 10]
+type = varset
+trigger1 = var(7) = 10
+fv = 12
+value = cond(var(7) > 0,(var(8)*.0100),1)
+ignorehitpause = 1
+
+[state 11]
+type = varset
+trigger1 = var(7) = 11
+fv = 29
+value = cond(var(7) > 0,(var(8)*.0100),1)
+ignorehitpause = 1
+
+[state 12]
+type = varset
+trigger1 = var(7) = 12
+fv = 30
+value = cond(var(7) > 0,(var(8)*.0100),1)
+ignorehitpause = 1
+
+[state 13]
+type = varset
+trigger1 = var(7) = 13
+fv = 31
+value = cond(var(7) > 0,(var(8)*.0100),1)
+ignorehitpause = 1
+
+[state 14]
+type = varset
+trigger1 = var(7) = 14
+fv = 32
+value = cond(var(7) > 0,(var(8)*.0100),1)
+ignorehitpause = 1
+
+[state 15]
+type = varset
+trigger1 = var(7) = 15
+fv = 33
+value = cond(var(7) > 0,(var(8)*.0100),1)
+ignorehitpause = 1
+
+[state 16]
+type = varset
+trigger1 = var(7) = 16
+fv = 34
+value = cond(var(7) > 0,(var(8)*.0100),1)
+ignorehitpause = 1
+
+[state 17]
+type = varset
+trigger1 = var(7) = 17
+fv = 35
+value = cond(var(7) > 0,(var(8)*.0100),1)
+ignorehitpause = 1
+
+[state 18]
+type = varset
+trigger1 = var(7) = 18
+fv = 36
+value = cond(var(7) > 0,(var(8)*.0100),1)
+ignorehitpause = 1
+
+[state 19]
+type = varset
+trigger1 = var(7) = 19
+fv = 37
+value = cond(var(7) > 0,(var(8)*.0100),1)
+ignorehitpause = 1
+
+[state 20]
+type = varset
+trigger1 = var(7) = 20
+fv = 38
+value = cond(var(7) > 0,(var(8)*.0100),1)
+ignorehitpause = 1
+
+[state percent reset 1]
+type = varset
+trigger1 = roundstate < 2
+trigger2 = statetype != A
+trigger2 = stateno = 0
+trigger2 = time = 10
+fv = 3
+value = 1
+ignorehitpause = 1
+
+[state percent reset 2]
+type = varset
+trigger1 = roundstate < 2
+trigger2 = statetype != A
+trigger2 = stateno = 0
+trigger2 = time = 10
+fv = 4
+value = 1
+ignorehitpause = 1
+
+[state percent reset 3]
+type = varset
+trigger1 = roundstate < 2
+trigger2 = statetype != A
+trigger2 = stateno = 0
+trigger2 = time = 10
+fv = 5
+value = 1
+ignorehitpause = 1
+
+[state percent reset 4]
+type = varset
+trigger1 = roundstate < 2
+trigger2 = statetype != A
+trigger2 = stateno = 0
+trigger2 = time = 10
+fv = 6
+value = 1
+ignorehitpause = 1
+
+[state percent reset 5]
+type = varset
+trigger1 = roundstate < 2
+trigger2 = statetype != A
+trigger2 = stateno = 0
+trigger2 = time = 10
+fv = 7
+value = 1
+ignorehitpause = 1
+
+[state percent reset 6]
+type = varset
+trigger1 = roundstate < 2
+trigger2 = statetype != A
+trigger2 = stateno = 0
+trigger2 = time = 10
+fv = 8
+value = 1
+ignorehitpause = 1
+
+[state percent reset 7]
+type = varset
+trigger1 = roundstate < 2
+trigger2 = statetype != A
+trigger2 = stateno = 0
+trigger2 = time = 10
+fv = 9
+value = 1
+ignorehitpause = 1
+
+[state percent reset 8]
+type = varset
+trigger1 = roundstate < 2
+trigger2 = statetype != A
+trigger2 = stateno = 0
+trigger2 = time = 10
+fv = 10
+value = 1
+ignorehitpause = 1
+
+[state percent reset 9]
+type = varset
+trigger1 = roundstate < 2
+trigger2 = statetype != A
+trigger2 = stateno = 0
+trigger2 = time = 10
+fv = 11
+value = 1
+ignorehitpause = 1
+
+[state percent reset 10]
+type = varset
+trigger1 = roundstate < 2
+trigger2 = statetype != A
+trigger2 = stateno = 0
+trigger2 = time = 10
+fv = 12
+value = 1
+ignorehitpause = 1
+
+[state percent reset 11]
+type = varset
+trigger1 = roundstate < 2
+trigger2 = statetype != A
+trigger2 = stateno = 0
+trigger2 = time = 10
+fv = 29
+value = 1
+ignorehitpause = 1
+
+[state percent reset 12]
+type = varset
+trigger1 = roundstate < 2
+trigger2 = statetype != A
+trigger2 = stateno = 0
+trigger2 = time = 10
+fv = 30
+value = 1
+ignorehitpause = 1
+
+[state percent reset 13]
+type = varset
+trigger1 = roundstate < 2
+trigger2 = statetype != A
+trigger2 = stateno = 0
+trigger2 = time = 10
+fv = 31
+value = 1
+ignorehitpause = 1
+
+[state percent reset 14]
+type = varset
+trigger1 = roundstate < 2
+trigger2 = statetype != A
+trigger2 = stateno = 0
+trigger2 = time = 10
+fv = 32
+value = 1
+ignorehitpause = 1
+
+[state percent reset 15]
+type = varset
+trigger1 = roundstate < 2
+trigger2 = statetype != A
+trigger2 = stateno = 0
+trigger2 = time = 10
+fv = 33
+value = 1
+ignorehitpause = 1
+
+[state percent reset 16]
+type = varset
+trigger1 = roundstate < 2
+trigger2 = statetype != A
+trigger2 = stateno = 0
+trigger2 = time = 10
+fv = 34
+value = 1
+ignorehitpause = 1
+
+[state percent reset 17]
+type = varset
+trigger1 = roundstate < 2
+trigger2 = statetype != A
+trigger2 = stateno = 0
+trigger2 = time = 10
+fv = 35
+value = 1
+ignorehitpause = 1
+
+[state percent reset 18]
+type = varset
+trigger1 = roundstate < 2
+trigger2 = statetype != A
+trigger2 = stateno = 0
+trigger2 = time = 10
+fv = 36
+value = 1
+ignorehitpause = 1
+
+[state percent reset 19]
+type = varset
+trigger1 = roundstate < 2
+trigger2 = statetype != A
+trigger2 = stateno = 0
+trigger2 = time = 10
+fv = 37
+value = 1
+ignorehitpause = 1
+
+[state percent reset 20]
+type = varset
+trigger1 = roundstate < 2
+trigger2 = statetype != A
+trigger2 = stateno = 0
+trigger2 = time = 10
+fv = 38
+value = 1
+ignorehitpause = 1
+
+;---------------------------
+;	set unique hit count
+[state not pressing a]
+type = varset
+trigger1 = stateno != [200,202]
+trigger1 = stateno != 400
+v = 14
+value = 0
+ignorehitpause = 1
+
+;---------------------------
+;	bash combo count number
+[state no bash]
+type = varset
+triggerall = roundstate < 2
+triggerall = roundsexisted <= 0
+trigger1 = 1
+v = 11
+value = 0
+ignorehitpause = 1
+
+[State bash add]
+type = VarAdd
+triggerall = stateno = 2000 || stateno = 2100 || stateno = 2200
+trigger1 = time = 1
+v = 11
+value = 1
+ignorehitpause = 1
+
+[State drop bash]
+type = Varset
+triggerall = stateno != [2000,2200]
+trigger1 = time = 10
+v = 11
+value = 0
+ignorehitpause = 1
+
+;---------------------------
+;	distance between two points at any given time
+[State dist]
+type = VarSet
+trigger1 = 1
+fv = 18
+value = p2bodydist x/2
+ignorehitpause = 1
+
+;	direct distance
+[State dist]
+type = VarSet
+trigger1 = 1
+fv = 28
+value = p2dist x
+ignorehitpause = 1
+
+;---------------------------
+;	p2 dist x for win
+[State dist]
+type = VarSet
+trigger1 = roundstate = 2
+fv = 19
+value = fvar(18)
+ignorehitpause = 1
+
+[State dist]
+type = VarSet
+trigger1 = roundstate = 2
+fv = 24
+value = pos x
+ignorehitpause = 1
+
+[State dist]
+type = Varset
+trigger1 = roundstate = 2
+fv = 25
+value = pos x
+ignorehitpause = 1
+
+[State dist]
+type = Varset
+trigger1 = roundstate = 2
+fv = 26
+value = fvar(28)
+ignorehitpause = 1
+
+[State dist]
+type = Varset
+trigger1 = roundstate = 2
+fv = 27
+value = fvar(28)
+ignorehitpause = 1
+
+;	walk
+[state walk]
+type = varadd 
+triggerall = stateno = 181
+trigger1 = (GameTime%1) = 0
+fv = 26
+value = -1
+persistent = 1
+ignorehitpause = 1
+
+;======================================
+; shift select
+;======================================
+[State no start]
+type = AssertSpecial
+triggerall = roundstate < 2
+triggerall = roundsexisted <= 0
+triggerall = var(0) != 1
+trigger1 = var(1) > 0
+flag = Intro
+
+[state no muzak]
+type = AssertSpecial
+triggerall = roundno = 1
+trigger1 = roundstate < 2
+flag = NoMusic
+
+[State shift wheel]
+type = Helper
+triggerall = numhelper(6000) = 0
+triggerall = roundstate = 0
+triggerall = roundsexisted <= 0
+triggerall = var(0) = 0
+trigger1 = time = 1
+name = "shift wheel"
+ID = 6000
+stateno = 6000
+pos = 0,0
+postype = P1    ;P2, Front, Back, Left, Right
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+;======================================
+; bar
+;======================================
+[state black back]
+type = Explod
+trigger1 = !numexplod(8499)
+anim = 8499
+ID = 8499
+pos = ifelse(teamside=1,0,screenwidth/2),screenheight/1.075
+postype = left  ;P2, Front, Back, Left, Right
+bindtime = -1
+supermovetime = 0
+pausemovetime = 0
+scale = 5,.3
+sprpriority = 0
+ownpal = 1
+ignorehitpause = 1
+
+[state level]
+type = explod
+trigger1 = !numexplod(6504)
+anim = 6504
+ID = 6504
+pos = ifelse(teamside=1,(screenwidth/12)-(screenwidth/48),(screenwidth/2)+(screenwidth/2.75)),screenheight/1.15
+postype = left  ;P2, Front, Back, Left, Right
+bindtime = -1
+supermovetime = 0
+pausemovetime = 0
+scale = .5,.5
+sprpriority = 0
+ownpal = 1
+ignorehitpause = 1
+
+[State number]
+type = RemoveExplod
+trigger1 = NumExplod(6499)
+ID = 6499
+
+[state text]
+type = explod
+trigger1 = !NumExplod(6499)
+anim = 6500+var(10)
+id = 6499
+pos = ifelse(teamside=1,(screenwidth/12)-(screenwidth/13),(screenwidth/2)+(screenwidth/2.275)),screenheight/1.155
+postype = left
+ownpal = 1
+bindtime = -1
+pausemovetime = -1
+supermovetime = -1
+ontop = 1
+scale = .5,.5
+
+[State bar filler]
+type = Helper
+trigger1 = !numhelper(8500)
+name = "fill"
+ID = 8500
+stateno = 8500
+pos = 0,0
+postype = P1    ;P2, Front, Back, Left, Right
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+[State bar filler itself]
+type = Helper
+trigger1 = !numhelper(8550)
+name = "fill itself"
+ID = 8550
+stateno = 8550
+pos = 0,0
+postype = left    ;P2, Front, Back, Left, Right
+facing = 1
+keyctrl = 0
+ownpal = 1
+supermovetime = 60
+pausemovetime = 60
+ignorehitpause = 1
+
+;======================================
+; shift end
+;======================================
+[State shift end]
+type = Helper
+triggerall = numhelper(7405) = 0
+trigger1 = var(3) = 1
+name = "shift end"
+ID = 7405
+stateno = 7405
+pos = 0,0
+postype = P1    ;P2, Front, Back, Left, Right
+facing = 1
+keyctrl = 0
+ownpal = 1
+ignorehitpause = 1
+
+;======================================
+; shift damage
+;======================================
+[state base]
+type = varset
+trigger1 = var(3) != 1
+fv =  0
+value = 1
+
+[state shift]
+type = varset
+trigger1 = var(3) = 1
+fv =  0
+value = 1.2
+
+;======================================
+; damage display
+;======================================
+[State damage display]
+type = Helper
+triggerall = numhelper(8760) = 0
+Trigger1 = P2MoveType = H
+Trigger1 = RoundState != 4
+name = "damage display"
+ID = 8760
+stateno = 8760
+pos = 0,0
+postype = P1    ;P2, Front, Back, Left, Right
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+;======================================
+; proration formula
+;======================================
+[State formula]
+type = VarSet
+trigger1 = var(7) > 1
+fv = 13
+value = (fvar(3)*fvar(4)*fvar(5)*fvar(6)*fvar(7)*fvar(8)*fvar(9)*fvar(10)*fvar(11)*fvar(12)*fvar(29)*fvar(30)*fvar(31)*fvar(32)*fvar(33)*fvar(34)*fvar(35)*fvar(36)*fvar(37)*fvar(38))-fvar(2)
+ignorehitpause = 1
+
+[state below zero?]
+type = varset
+trigger1 = var(7) > 1
+trigger1 = fvar(13) < 0
+value = 0
+ignorehitpause = 1
+
+;======================================
+; warning
+;======================================
+[State warning]
+type = Helper
+triggerall = numhelper(6200) = 0
+trigger1 = movetype = H && alive
+name = "warning"
+ID = 6200
+stateno = 6200
+pos = 0,0
+postype = P1    ;P2, Front, Back, Left, Right
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+;======================================
+; heartbeat flag
+;======================================
+[State -2, heart flag]
+type = varset
+trigger1 = life > 250
+trigger2 = life = 0
+v = 15
+value = 0
+ignorehitpause = 1 
+
+[State -2, heart flag]
+type = varset
+trigger1 = life <= 250 && life != 0
+v = 15
+value = 1
+ignorehitpause = 1
+persistent = 0
+
+[state heartbeat]
+type = playsnd
+triggerall = var(15) = 1
+trigger1 = (GameTime%90) = 0
+value = s5000,0
+ignorehitpause = 1
+
+;======================================
+; p2 air determination
+;======================================
+[State in air?]
+type = VarSet
+trigger1 = p2statetype = A && p2movetype != H
+v = 18
+value = 1
+ignorehitpause = 1
+
+[State hit]
+type = VarSet
+trigger1 = p2statetype = A && p2movetype = H
+v = 18
+value = 2
+ignorehitpause = 1
+
+[State stand]
+type = VarSet
+trigger1 = p2statetype != A
+v = 18
+value = 0
+ignorehitpause = 1
+
+;======================================
+; counter hit determination
+;======================================
+[State -2]
+Type = VarSet
+TriggerAll = P2MoveType = A
+Trigger1 = StateNo != [800, 830]
+V = 19
+Value = 1
+IgnoreHitPause = 1
+
+[State -2]
+Type = VarSet
+TriggerAll = Var(19) = 1
+Trigger1 = P2MoveType != A
+Trigger2 = StateNo = [800, 830]
+V = 19
+Value = 0
+IgnoreHitPause = 1
+
+[State -2]
+Type = VarSet
+TriggerAll = MoveType = A
+Trigger1 = StateNo != [800, 830]
+V = 24
+Value = 1
+IgnoreHitPause = 1
+
+[State -2]
+Type = VarSet
+TriggerAll = Var(24) = 1
+Trigger1 = MoveType != A
+Trigger2 = StateNo = [800, 830]
+V = 24
+Value = 0
+IgnoreHitPause = 1
+
+;======================================
+; point determination
+;======================================
+; point combo
+[State p1]
+type = VarSet
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+trigger1 = var(7) > 0
+v = 20
+value = var(7)
+ignorehitpause = 1
+
+[State p2]
+type = VarSet
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+trigger1 = var(23) > 0
+v = 21
+value = var(23)
+ignorehitpause = 1
+
+; point guard
+[State p1]
+type = Varadd
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+trigger1 = enemy,moveguarded & time = 0
+v = 20
+value = 1
+ignorehitpause = 1
+
+[State p2]
+type = Varadd
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+trigger1 = moveguarded & enemy,time = 0
+v = 21
+value = 1
+ignorehitpause = 1
+
+; point hit reset
+[State p1]
+type = VarSet
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+trigger1 = movetype = H && stateno != [120,155]
+trigger2 = roundstate < 2
+trigger3 = moveguarded
+v = 20
+value = 0
+ignorehitpause = 1
+
+[State p2]
+type = VarSet
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+trigger1 = enemy,movetype = H && enemy,stateno != [120,155]
+trigger2 = roundstate < 2
+trigger3 = moveguarded
+v = 21
+value = 0
+ignorehitpause = 1
+
+; point countdown
+[State p1]
+type = Varadd
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+triggerall = var(20) > 0
+trigger1 = var(7) = 0
+trigger1 = (gametime % 60) = 0
+trigger1 = enemy,stateno != 5075
+trigger1 = stateno != [120,155]
+v = 20
+value = -1
+ignorehitpause = 1
+
+[State p2]
+type = Varadd
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+triggerall = var(21) > 0
+trigger1 = var(23) = 0
+trigger1 = (gametime % 60) = 0
+trigger1 = stateno != 5075
+trigger1 = enemy,stateno != [120,155]
+v = 21
+value = -1
+ignorehitpause = 1
+
+; save for fade
+[State p1]
+type = VarSet
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+trigger1 = var(20) != 0 && var(26) != 1
+trigger1 = stateno != 5075 || enemy,stateno != 5075
+v = 27
+value = var(20)
+ignorehitpause = 1
+
+[State p2]
+type = VarSet
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+trigger1 = var(21) != 0 && var(26) != 1
+trigger1 = stateno != 5075 || enemy,stateno != 5075
+v = 28
+value = var(21)
+ignorehitpause = 1
+
+; POWERBREAK CORRECTION
+[State p1]
+type = VarSet
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+trigger1 = var(27) > 1
+trigger1 = var(26) != 1
+v = 29
+value = var(27)
+ignorehitpause = 1
+
+[State p2]
+type = VarSet
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+trigger1 = var(28) > 1
+trigger1 = var(26) != 1
+v = 30
+value = var(28)
+ignorehitpause = 1
+
+; reset after powerbreak
+[State p1]
+type = VarSet
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+trigger1 = var(26) != 0
+trigger1 = stateno = 5120 || enemy,stateno != 5120
+v = 20
+value = 0
+ignorehitpause = 1
+
+[State p2]
+type = VarSet
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+trigger1 = var(26) != 0
+trigger1 = stateno = 5120 || enemy,stateno != 5120
+v = 21
+value = 0
+ignorehitpause = 1
+
+;======================================
+; enemy combo correction
+;======================================
+[state combo set]
+type = varset
+trigger1 = roundstate < 2
+v = 23
+value = 0
+ignorehitpause = 1
+
+[state combo reset]
+type = varset
+triggerall = var(23) > 0
+trigger1 = enemy,stateno = 0 || enemy,stateno = 100 || enemy,stateno = 105 || enemy,stateno = 21 || enemy,stateno = 11
+trigger1 = time = 5
+v = 23
+value = 0
+ignorehitpause = 1
+
+;======================================
+; powerbreak
+;======================================
+; cache powerbreak decision
+[State remove powerbreak decision]
+type = VarSet
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+trigger1 = var(19) = 0 && var(24) = 1
+trigger2 = var(19) = 1 && var(24) = 0
+v = 25
+value = 0
+
+[State cache powerbreak decision]
+type = VarSet
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+trigger1 = var(19) = 1 && var(24) = 1
+trigger1 = var(20) != var(21)
+v = 25
+value = cond(var(20) > var(21),1,-1)
+
+[State powerbreak active flag]
+type = varset
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+trigger1 = var(26) = 0
+trigger1 = stateno = 5075 || enemy,stateno = 5075
+v = 26
+value = cond(enemy,stateno = 5075,1,-1)
+
+[State powerbreak not active flag]
+type = varset
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+trigger1 = var(26) != 0
+trigger1 = stateno = 0 && enemy,stateno = 0
+v = 26
+value = 0
+
+[State confirm second powerbreak available]
+type = VarSet
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+triggerall = var(31) = 1
+trigger1 = var(26) != 0
+v = 32
+value = 1
+
+[State confirm second powerbreak not available]
+type = VarSet
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+triggerall = var(31) = 1
+trigger1 = var(26) = 0
+v = 32
+value = 0
+
+;======================================
+; point display
+;======================================
+[State point display]
+type = Helper
+triggerall = numhelper(8898) = 0
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+Trigger1 = RoundState != 4
+name = "point display"
+ID = 8898
+stateno = 8898
+pos = 0,0
+postype = P1    ;P2, Front, Back, Left, Right
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+;======================================
+; counter to activate second powerbreak
+;======================================
+[State set counter]
+type = VarSet
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+triggerall = var(31) = 1
+trigger1 = var(32) = 0
+fv = 17
+value = 0
+
+[State set counter]
+type = Varadd
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+triggerall = var(31) = 1
+trigger1 = var(32) = 1
+fv = 17
+value = .1
+
+;======================================
+; track hits since powerbreak
+;======================================
+[State set to zero]
+type = VarSet
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+triggerall = var(31) = 1
+trigger1 = var(26) = 0
+v = 33
+value = 0
+
+[State set to zero]
+type = VarSet
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+triggerall = var(31) = 1
+trigger1 = var(26) = 0
+v = 34
+value = 0
+
+;======================================
+; no triple break
+;======================================
+[State prevent loops]
+type = VarSet
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+triggerall = var(31) = 1
+triggerall = var(26) != 0
+trigger1 = stateno = 5076 || enemy,stateno = 5076
+v = 35
+value = cond(stateno = 5076,1,cond(enemy,stateno = 5076,-1,762))
+ignorehitpause = 1
+
+[State reset]
+type = VarSet
+triggerall = var(22) != 1
+triggerall = var(16) != 0
+triggerall = var(31) = 1
+trigger1 = var(26) = 0
+v = 35
+value = 0
+ignorehitpause = 1
+
+;======================================
+; powerbreak shell
+;======================================
+[State powerbreak shell]
+type = Helper
+trigger1 = var(22) != 1
+trigger1 = numhelper(10000) = 0
+name = "powerbreak shell"
+ID = 10000
+stateno = 10000
+pos = 0,0
+postype = left    ;P2, Front, Back, Left, Right
+facing = facing
+keyctrl = 0
+ownpal = 1
+
+;======================================
+; guard break check
+;======================================
+[State no guard]
+type = VarSet
+trigger1 = movetype != A
+v = 36
+value = 0
+ignorehitpause = 1
+
+[State guard]
+type = VarSet
+trigger1 = p2stateno = [120,155]
+v = 36
+value = 1
+ignorehitpause = 1
+
+[State break]
+type = VarSet
+trigger1 = var(36) = 1
+trigger1 = movehit
+v = 36
+value = 2
+ignorehitpause = 1
+
+;[State break]
+;type = Helper
+;trigger1 = var(36) = 2
+;trigger1 = numhelper(905) = 0
+;name = "guardbreak"
+;ID = 905
+;stateno = 905
+;pos = 0,0
+;postype = left    ;P2, Front, Back, Left, Right
+;facing = facing
+;keyctrl = 0
+;ownpal = 1
+;ignorehitpause = 1
+
+;======================================
+; ko container
+;======================================
+[State ko container]
+type = Helper
+trigger1 = enemy,life = 0
+trigger1 = numhelper(945441) = 0
+name = "ko container"
+ID = 945441
+stateno = 945441
+pos = 0,0
+postype = left    ;P2, Front, Back, Left, Right
+facing = facing
+keyctrl = 0
+ownpal = 1
+ignorehitpause = 1
+
+;======================================
+; hitsound rando
+;======================================
+[State VarRandom]
+type = VarRandom
+trigger1 = 1
+v = 37
+range = 0,2
+
+;======================================
+; winner
+;======================================
+[State Explod]
+type = Explod
+trigger1 = numexplod(9109) != 1
+trigger1 = matchover
+anim = 9109
+ID = 9109
+pos = screenwidth/2,screenheight/2.5
+postype = left  ;P2, Front, Back, Left, Right
+facing = 1
+removetime = -2
+scale = .5,.5
+ontop = 1
+
+;======================================
+; running?
+;======================================
+[State running?]
+type = VarSet
+trigger1 = const(velocity.run.fwd.x) && stateno = 100
+v = 38
+value = 1
+ignorehitpause = 1
+
+[State no vel]
+type = VarSet
+trigger1 = stateno = 0 || stateno = 11
+trigger1 = time = 5
+trigger2 = movecontact
+trigger3 = command = "holdback"
+v = 38
+value = 0
+ignorehitpause = 1
+
+;======================================
+; throw confirm
+;======================================
+[State throw?]
+type = VarSet
+trigger1 = stateno = [815,820]
+v = 40
+value = 1
+ignorehitpause = 1
+
+[State throw?]
+type = VarSet
+trigger1 = stateno != [815,820]
+v = 40
+value = 0
+ignorehitpause = 1
+
+;======================================
+; wall check
+;======================================
+[State wall check]
+type = VarSet
+trigger1 = enemy,stateno = 5077
+trigger1 = enemy,backedgebodydist > 20
+v = 41
+value = 0
+ignorehitpause = 1
+
+[State wall check]
+type = VarSet
+trigger1 = enemy,stateno = 5077
+trigger1 = enemy,backedgebodydist < 20
+v = 41
+value = 1
+ignorehitpause = 1
+
+;===============================================================================
+; ------- Command buffering system by Vans --------
+;===============================================================================
+[State -2]
+Type = Helper
+Trigger1 = !NumHelper(10371)
+name = "Buffering - (head.pos)"
+ID = 10371
+pos = 0,0
+posType = p1
+facing = 1
+StateNo = 10371
+keyctrl = 1
+ownpal = 1
+supermoveTime = 65535
+pausemoveTime = 65535
+
+;===============================================================================
+; confirm stateno normals for DC
+;===============================================================================
+[State confirm]
+type = VarSet
+trigger1 = stateno = [200,230]
+v = 43
+value = stateno
+
+;===============================================================================
+; c. abc
+;===============================================================================
+[State confirm]
+type = VarSet
+trigger1 = stateno = [400,420]
+v = 43
+value = stateno
+
+;===============================================================================
+; hit by shift alone fix
+;===============================================================================
+[State -2]
+type = VarSet
+trigger1 = stateno != 230 && movehit
+trigger2 = var(7) >0
+v = 50    ;fv = 10
+value = 0
+
+;-------------------------------------------------------
+; -3
+[statedef -3]
+
+;======================================
+; landing sound
+;======================================
+[State -3, Landing Sound]
+type = PlaySnd
+triggerall = Time = 1
+trigger1 = stateno = 52 ;Jump land
+trigger2 = stateno = 106 ;Run-back land
+value = S40, 0
+
+;======================================
+; cornerpush
+;======================================
+[state -3 push]
+type = PosAdd
+triggerall = NumTarget && StateType!= A;
+triggerall = StateNo!= 230
+triggerall = StateNo!= [800,899] ; Throws
+trigger1 = Target, HitShakeOver
+trigger1 = Target, BackEdgeBodyDist<= 0 || Target, FrontEdgeBodyDist<= 0
+trigger1 = !(Target, StateType = A || Target, StateType = L)
+x = -ceil(3.799557488364996) * .2
+ignorehitpause = 1
+
+;======================================
+; Prevent Undergound Juggles (POTS)
+;======================================
+[State -3, Prevent Undergound Juggles]
+type= targetbind
+trigger1= movehit=1
+trigger1= numtarget=1 && numenemy
+trigger1= (target,time<=1) && (target,ID=enemynear,ID); this is just to prevent Simul issues as usual
+trigger1= !(target,hitshakeover) && (target, hitfall) && (target, pos y>0)
+pos= ceil(p2dist x), ceil(-pos y); keeps P2 at the same horizontal distance, but resets his Y position
+ignorehitpause= 1
+
+;======================================
+; shift velocity
+;======================================
+[state -3 set x]
+type = VarSet
+trigger1 = stateno = 230 && anim = 230
+fv = 15
+value = cond(var(17) = 0,-6/2,-0.0004644791188)
+ignorehitpause = 1
+
+[state -3 set y]
+type = VarSet
+trigger1 = stateno = 230 && anim = 230
+fv = 16
+value = cond(var(17) = 0,-10.400000571/2,-14/2)
+ignorehitpause = 1
+
+[state -3 set x]
+type = VarSet
+trigger1 = stateno = 230 && anim = 630
+fv = 15
+value = -6/2
+ignorehitpause = 1
+
+[state -3 set y]
+type = VarSet
+trigger1 = stateno = 230 && anim = 630
+fv = 16
+value = -10.400000571/2
+ignorehitpause = 1
+
+;======================================
+; ctrlset
+;======================================
+[State -3, CtrlSet]
+type = CtrlSet
+trigger1 = StateNo = 151 || StateNo = 153
+trigger1 = HitOver     ;<----end of blockstun
+trigger2 = StateNo = 5001 || StateNo = 5011
+trigger2 = HitOver     ;<----end of hitstun
+trigger3 = StateNo = 5120 || StateNo = 5201
+trigger3 = !AnimTime   ;<----end of wakeup/safe fall
+value = 1
+
+;======================================
+; sounds
+;======================================
+[State -3]
+type = PlaySnd
+triggerall = Time = 1
+triggerall = alive && (random <= 500)
+triggerall = stateno = 5000
+trigger1 = anim = 5000 || anim = 5001 || anim = 5010
+trigger2 = anim = 5011 || anim = 5020 || anim = 5021
+channel = 0
+value = s5050,var(37)
+
+[State -3]
+type = PlaySnd
+triggerall = enemy,HitFall
+triggerall = enemy,backedgebodydist < 20
+trigger1 = enemy,stateno = 5077 && var(41) = 0
+value = s1000,0

@@ -1,0 +1,54 @@
+
+; Player information
+[Info]
+name         = "Yamazaki"   ; Name of character
+displayname  = "Ryuji Yamazaki"  ; Name of character to display
+versiondate  = 10,11,2020 ;(start date/latest date)
+mugenversion = 1.1           ; Version of M.U.G.E.N. character works on (X.XX)
+author       = "Bannana"   ; Character author name
+pal.defaults = 1,2,3,4   ; Default palettes in order of preference (up to 4, starts from 1)
+localcoord   = 320,240       ; Local coordinate space (width, height)
+
+; Files for the player
+[Files]
+cmd      = cmd.cmd          ; Command set
+cns      = ymzi.cns          ; Constants
+st       = n.cns          ; States
+st1		 = c.cns
+st2		 = ct.cns
+st3		 = cf.cns
+st4		 = cm.cns
+st5		 = m.cns
+st6		 = a.cns
+st7		 = s.cns
+st8	 	 = -2.cns
+st9		 = config.txt
+stcommon = common.cns       ; Common states (from data or motif)
+sprite   = ymzi.sff          ; Sprite
+anim     = ymzi.air          ; Animation
+sound    = ymzi.snd          ; Sound
+ai       = char.ai           ; AI hints data (not used)
+pal1	 = 1.act
+pal2	 = 2.act
+pal3	 = 3.act
+pal4	 = 4.act
+
+; Maps character selection buttons to palette numbers.
+[Palette Keymap]
+x  = 1 ;Press button X to select palette 1, etc.
+y  = 2
+z  = 3
+a  = 1
+b  = 2
+c  = 3
+x2 = 4 ;Hold Start and press button X for palette 7, etc.
+y2 = 1
+z2 = 2
+a2 = 3
+b2 = 4
+c2 = 1
+
+; Arcade mode
+[Arcade]
+;intro.storyboard = intro.def
+;ending.storyboard = ending.def

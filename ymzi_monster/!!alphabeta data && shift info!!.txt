@@ -1,0 +1,44 @@
+114688 to 1000 conversion
+
+divide by 114.688
+
+Seven Serpents of Judgement f,db,f, a
+	monster (x)
+		very little range, guard break
+	tranquility (x)
+		no knife, slap with long hitstun
+	freedom (x)
+		knife only
+
+Snake handler/strike qcb, b
+	monster (x)
+		scorpion drag (needs to allow comboing)
+	tranquility (x)
+		can be angled after being thrown
+	freedom (x)
+		garou feint (becomes f+a+c)
+
+sadomaso hcf, b
+	monster (x)
+		heavy strike
+	tranquility (x)
+		cheap driller (follow up with c mash)
+			<= 2 slide
+			<= 5 slashes
+			>  5 mega fuck you headbash
+	freedom (x)
+		garou feint (becomes d+a+c) & hop back on hit
+
+Explosion Headbutt f,b,d,u, a (hcb,f, a
+	monster (x)
+		throw for wallbounce
+	tranquility (x)
+		headbutt without grab
+	freedom (x)
+		no knockdown
+
+
+combo (not yet)
+Spray Sand > Fight of Tempering > Silent Simper f,d,df, c
+
+
